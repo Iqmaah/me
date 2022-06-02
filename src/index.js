@@ -6,11 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import Signup1 from './pages/Auth/Signup/Signup1';
 import Signup2 from './pages/Auth/Signup/Signup2';
 import Signup3 from './pages/Auth/Signup/Signup3';
+import Signup4 from './pages/Auth/Signup/Signup4';
+import Login1 from './pages/Auth/Login/Login1';
+import Login2 from './pages/Auth/Login/Login2';
+import Loginmodal from './pages/Auth/Login/Loginmodal';
+import PasswordReset1 from './pages/Auth/ResetPassword/PasswordReset1';
+import PasswordReset2 from './pages/Auth/ResetPassword/PasswordReset2';
+import PasswordReset3 from './pages/Auth/ResetPassword/PasswordReset3';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Signup1 />
+    <PasswordReset3/>
   </React.StrictMode>
 );
 
