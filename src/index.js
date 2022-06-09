@@ -13,11 +13,13 @@ import Loginmodal from './pages/Auth/Login/Loginmodal';
 import PasswordReset1 from './pages/Auth/ResetPassword/PasswordReset1';
 import PasswordReset2 from './pages/Auth/ResetPassword/PasswordReset2';
 import PasswordReset3 from './pages/Auth/ResetPassword/PasswordReset3';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Sidebar from './shared-components/Sidebar/Sidebar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <PasswordReset3/>
+    <Dashboard/>
   </React.StrictMode>
 );
 

@@ -18,14 +18,22 @@ const Loginmodal = () => {
                                
                             </div>
 
-                            <div className="grid grid-rows-3 gap-2">
-                                <div className='wrapper' >
+                            <div className="grid grid-rows-3 gap-4">
+                                {/* <div className='' >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#5B2E4F]"  viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                                     </svg>
                                         
                                     <span className="text-[#5B2E4F] font-bold" style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "20px", lineHeight: "27px"}}>Easy to use</span>
                                     <p className='px-8' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: ""}}>We offer easy-to-use platform designs, frictionless user experience and a guided approach to investing for women.</p> 
+                                </div> */}
+                                 <div className=''>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#5B2E4F]"  viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                        
+                                    <span className="text-[#5B2E4F] font-bold" style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "20px", lineHeight: "27px"}}>Easy to use</span>
+                                    <p className='px-8' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>We offer easy-to-use platform designs, frictionless user experience and a guided approach to investing for women.</p> 
                                 </div>
                                 <div className=''>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#5B2E4F]"  viewBox="0 0 20 20" fill="currentColor">

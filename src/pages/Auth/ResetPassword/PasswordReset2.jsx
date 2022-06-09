@@ -6,8 +6,8 @@ const PasswordReset2 = () => {
             <div className="min-h-full hidden md:block lg:px-8 ">
 
             </div>
-            <div className="border border-white-100 rounded-2xl bg-white mt-6 mb-6 mx-6 flex items-center justify-center py-12">
-                    <div className="py-20 px-16 rounded-2xl max-w-md w-full space-y-8">
+            <div className="border border-white-100 rounded-2xl bg-white my-8 mx-8 flex items-center justify-center py-6">
+                    <div className="py-20 px-12 lg:px-16 rounded-2xl max-w-md w-full space-y-8">
                         
                         <div className='flex justify-center text-center'>
                             <img src={mailImg}></img>

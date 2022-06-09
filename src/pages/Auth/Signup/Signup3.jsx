@@ -28,8 +28,8 @@ const Signup3 = () => {
                     </div>              
                 </div>
 
-                <div className="relative border border-white-100 rounded-2xl bg-white mt-8 mb-8 mx-4 flex items-center py-8">
-                    <div className="px-32 w-full space-y-8">
+                <div className="relative border border-white-100 rounded-2xl bg-white my-12 mx-8 flex items-center py-6">
+                    <div className="px-20 md:px-16 lg:px-32 w-full space-y-8">
                         <div className='absolute top-5 right-5'>
                             <p className='text-gray-800' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>Already own an account? Log in</p>
                         </div>

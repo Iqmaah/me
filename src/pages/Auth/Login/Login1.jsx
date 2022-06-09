@@ -24,8 +24,8 @@ const Login1 = () => {
                         <img src={LoginImg} alt="Signup today" className='hidden md:block' />
                     </div>              
             </div>
-            <div className="border border-white-100 rounded-2xl bg-white mt-6 mb-6 mx-6 flex justify-center items-center py-6">
-                    <div className="py-20 px-10 rounded-2xl max-w-md w-full space-y-8">
+            <div className="border border-white-100 rounded-2xl bg-white my-6 mx-8 flex justify-center items-center py-6">
+                    <div className="py-8 px-12 rounded-2xl max-w-md w-full space-y-8">
                         
                         <div className=''><br/>
                           

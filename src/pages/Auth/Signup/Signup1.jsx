@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-// import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import SignupImg from '../../../assets/images/Signup.png'
 import HerVest from '../../../assets/images/hervest.png'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField.jsx'
@@ -26,20 +26,20 @@ const Signup1 = () => {
             
       
 
-            <div className="min-h-full sm:hidden md:block sm:px-6 flex items-center justify-center py-12 px-12 lg:px-8 ">
+            <div className="min-h-full hidden md:block py-8 px-12 lg:px-8 ">
                     <div className="hidden md:block mt-2">
                         <img src={HerVest} alt="HerVest logo" className='sm:hidden md:block'></img>    
                     </div><br/>
-                    <div className="mt-5 flex justify-center ">
-                        <img src={SignupImg} alt="Signup today" className='sm:hidden md:block' />
+                    <div className="hidden md:block mt-16 mx-20 flex justify-center">
+                        <img src={SignupImg} alt="Signup today" className='' />
                     </div>              
             </div>
 
-            <div className="relative border border-white-100 bg-white mx-12 mt-4 mb-8 rounded-2xl flex items-center py-12 ">
+            <div className="relative border border-white-100 bg-white lg:mx-8 lg:my-12 rounded-2xl flex items-center py-8 ">
                 
-                <div className=" px-32 w-full space-y-8">
+                <div className="px-20 md:px-32 w-full space-y-8">
                         <div className='absolute top-5 right-5'>
-                            <p className='text-gray-800' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>Already own an account? Log in</p>
+                            <p className='text-gray-800' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>Already own an account?<a href={'/Login2'}>Log in</a></p>
                         </div>
                         <div className='pt-4'><br/>
                           
@@ -50,8 +50,8 @@ const Signup1 = () => {
                         
                         <form onSubmit={onSubmit}>
                             
-                                <div className='flex flex-wrap '>
-                                    <div className='w-full md:w-1/2 pr-3'>
+                                <div className='flex flex-wrap'>
+                                    <div className='mb-6 md:mb-0 w-full md:w-1/2 md:pr-3'>
                                         <label htmlFor="firstname" className="sr-only">Firstname</label>
                                         <PrimaryFormField type="text" placeholder="Firstname" onChange={(e) => setFirstname(e.target.value)} value={firstname}  />
                                     </div><br />
@@ -71,10 +71,13 @@ const Signup1 = () => {
                                 </div><br />
                                 <div>
                                     <label htmlFor="password" className="sr-only">Password</label>
-                                    <PrimaryFormField type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)} />
+                                    <PrimaryFormField type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)} value={password} />
                                 </div><br />
-                                <div> 
-                                    <Button text="NEXT"></Button>
+                                <div>
+                                    <a  href={'/Login2'}>
+                                        <Button text="NEXT"></Button>
+                                    </a> 
+                                    
                                 </div>
                         </form>
                 </div>       

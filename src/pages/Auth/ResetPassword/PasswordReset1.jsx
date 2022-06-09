@@ -15,8 +15,8 @@ const PasswordReset1 = () => {
             <div className="min-h-full hidden md:block lg:px-8 ">
 
             </div>
-            <div className="relative border border-white-100 rounded-2xl bg-white mt-4 mb-4 mx-4 flex items-center justify-center py-10">
-                    <div className="py-20 px-36 w-full space-y-8">
+            <div className="relative border border-white-100 rounded-2xl bg-white my-8 mx-8 flex items-center justify-center py-6">
+                    <div className="py-16 px-16 lg:px-28 w-full space-y-8">
                         <div className='absolute top-10 right-12 flex flex-row'>
                             <p className='text-gray-400' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>New user?</p>&nbsp;
                             <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>Create new account</p>

@@ -24,8 +24,8 @@ const Signup2 = () => {
                     </div>              
                 </div>
 
-                <div className="relative border border-white-100 bg-white mx-10 mt-8 mb-8 rounded-2xl flex items-center justify-center py-8">
-                    <div className="px-32  w-full space-y-8">
+                <div className="relative border border-white-100 bg-white mx-8 my-6 lg:my-12 rounded-2xl flex items-center justify-center py-4 lg:py-6">
+                    <div className="px-20 md:px-16 lg:px-32  w-full space-y-8">
                         <div className='absolute top-5 right-5'>
                             <p className='text-gray-800' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>Already own an account? Log in</p>
                         </div>
@@ -39,25 +39,25 @@ const Signup2 = () => {
                         <form onSubmit={onSubmit}>
                             
                             <div className="flex justify-center">
-                                <div className="mb-6 sm:w-96">
+                                <div className="mb-6 sm:w-72 ">
                                     <Dropdown placeholder="Work station" valueArr={["1","2", "tayo","4"]}></Dropdown>
                                 </div>
                             </div>
 
                             <div className="flex justify-center">
-                                <div className="mb-6 sm:w-96">
+                                <div className="mb-6 sm:w-72">
                                   <Dropdown placeholder="Relationship Status" valueArr={["1","2", "tayo","4"]}/>
                                 </div>
                             </div>
 
                             <div className="flex justify-center">
-                                <div className="mb-6 sm:w-96">
+                                <div className="mb-6 sm:w-72">
                                     <Dropdown placeholder="Number of kids" valueArr={["1","2", "tayo","4"]}/>
                                 </div>
                             </div>
 
                             <div className="flex justify-center">
-                                <div className="mb-6 sm:w-96">
+                                <div className="mb-6 sm:w-72">
                                     <Dropdown placeholder="Average income per month" valueArr={["1","2", "tayo","4"]}/>
                                 </div>
                             </div> 
