@@ -1,6 +1,7 @@
 
 
 import { useEffect, useState } from 'react'
+import { Link } from "react-router-dom"
 import SignupImg from '../../../assets/images/Signup3.png'
 import HerVest from '../../../assets/images/hervest.png'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField'
@@ -31,7 +32,7 @@ const Signup3 = () => {
                 <div className="relative border border-white-100 rounded-2xl bg-white my-12 mx-8 flex items-center py-6">
                     <div className="px-20 md:px-16 lg:px-32 w-full space-y-8">
                         <div className='absolute top-5 right-5'>
-                            <p className='text-gray-800' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>Already own an account? Log in</p>
+                            <p className='text-gray-800' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>Already own an account? <Link to="/Login1" className='text-[#5B2E4F]'>Log in</Link></p>
                         </div>
                         <div className='pt-4'><br/>
                           
@@ -69,7 +70,9 @@ const Signup3 = () => {
                             </div>
                                     
                                 <div> 
-                                    <Button text="NEXT"/>
+                                    <Link to="/Signup4">
+                                        <Button text="NEXT"></Button>
+                                    </Link>
                                 </div>
                         </form>
                     </div>      

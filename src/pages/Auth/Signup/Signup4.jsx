@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import SignupImg from '../../../assets/images/Signup4.png'
 import HerVest from '../../../assets/images/hervest.png'
 import Button from '../../../shared-components/Form/Button'
@@ -25,7 +26,10 @@ const Signup4 = () => {
                         </div><br/><br/>
 
                         <div> 
-                            <Button text="LOG IN" />
+                            <Link to="/Login1">
+                                <Button text="LOG IN" />
+                            </Link>
+                            
                         </div>
                         
                     </div>      

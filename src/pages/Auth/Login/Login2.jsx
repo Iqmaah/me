@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import HerVest from './../../../assets/images/hervest.png'
 import LoginImg from './../../../assets/images/Login2.png'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField.jsx'
@@ -27,7 +28,7 @@ const Login2 = () => {
                     <div className="sm:px-20 lg:px-28 py-8 w-full space-y-8">
                         <div className='absolute top-10 right-12 flex flex-row'>
                             <p className='text-gray-400' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>New user?</p>&nbsp;
-                            <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>Create new account</p>
+                            <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}><Link to="/" className='text-[#5B2E4F]'>Create new account</Link></p>
                         </div>
                         <div className='pt-8'><br/>
                           
@@ -45,10 +46,14 @@ const Login2 = () => {
 
                                 <p className='text-[#5B2E4F] font-bold mb-14' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "14px", lineHeight: "18px"}}>Forgot password?</p>
                                 <div> 
-                                    <Button text="LOG IN" />
+                                    <Link to="/Loginmodal">
+                                        <Button text="LOG IN" />
+                                    </Link>
                                 </div><br/>
                                 <div className='flex justify-center'>
-                                    <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "16px", lineHeight: "22px"}}>Sign up to another account</p>
+                                    <Link to="/">
+                                        <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "16px", lineHeight: "22px"}}>Sign up to another account</p>
+                                    </Link>
                                 </div>
                         </form>
                     </div>      

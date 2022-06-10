@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import SignupImg from '../../../assets/images/Signup2.png'
 import HerVest from '../../../assets/images/hervest.png'
 import Button from '../../../shared-components/Form/Button'
@@ -27,7 +28,7 @@ const Signup2 = () => {
                 <div className="relative border border-white-100 bg-white mx-8 my-6 lg:my-12 rounded-2xl flex items-center justify-center py-4 lg:py-6">
                     <div className="px-20 md:px-16 lg:px-32  w-full space-y-8">
                         <div className='absolute top-5 right-5'>
-                            <p className='text-gray-800' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>Already own an account? Log in</p>
+                            <p className='text-gray-800' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>Already own an account? <Link to="/Login1" className='text-[#5B2E4F]'>Log in</Link></p>
                         </div>
                         <div className='pt-4'><br/>
                           
@@ -63,7 +64,9 @@ const Signup2 = () => {
                             </div> 
                                     
                                 <div> 
-                                    <Button text="NEXT"></Button>
+                                    <Link to="/Signup3">
+                                        <Button text="NEXT"></Button>
+                                    </Link> 
                                 </div>
                         </form>
                     </div>      

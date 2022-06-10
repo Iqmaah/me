@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import mailImg from './../../../assets/images/resetmail.png'
 
 const PasswordReset2 = () => {

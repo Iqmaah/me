@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField.jsx'
 import Button from '../../../shared-components/Form/Button.jsx'
 
@@ -19,7 +20,7 @@ const PasswordReset1 = () => {
                     <div className="py-16 px-16 lg:px-28 w-full space-y-8">
                         <div className='absolute top-10 right-12 flex flex-row'>
                             <p className='text-gray-400' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>New user?</p>&nbsp;
-                            <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>Create new account</p>
+                            <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}><Link to="/" className='text-[#5B2E4F]'>Create new account</Link></p>
                         </div>
                         <div className=''><br/>
                           
@@ -35,13 +36,13 @@ const PasswordReset1 = () => {
                                 </div><br />
 
                                 <p className='text-[#5B2E4F] font-bold mb-14' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "14px", lineHeight: "18px"}}>Forgot password?</p>
-                                <div> 
-                                <Button text="SEND RESET LINK" />
+                                <div>
+                                    <Link to="/PasswordReset2" className='text-[#5B2E4F]'>
+                                        <Button text="SEND RESET LINK" />
+                                    </Link> 
+                                
                                 </div><br/>
-                                <div className='flex flex-row justify-center'>
-                                    <p className='text-gray-400' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>New user?</p>&nbsp;
-                                    <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>Create new account</p>
-                                </div>
+                               
                         </form>
                     </div>      
             </div>

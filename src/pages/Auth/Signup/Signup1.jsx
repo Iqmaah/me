@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom"
 import SignupImg from '../../../assets/images/Signup.png'
 import HerVest from '../../../assets/images/hervest.png'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField.jsx'
@@ -39,7 +39,7 @@ const Signup1 = () => {
                 
                 <div className="px-20 md:px-32 w-full space-y-8">
                         <div className='absolute top-5 right-5'>
-                            <p className='text-gray-800' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>Already own an account?<a href={'/Login2'}>Log in</a></p>
+                            <p className='text-gray-800' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>Already own an account?<Link to="/Login1" className='text-[#5B2E4F]'>Log in</Link></p>
                         </div>
                         <div className='pt-4'><br/>
                           
@@ -74,10 +74,9 @@ const Signup1 = () => {
                                     <PrimaryFormField type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)} value={password} />
                                 </div><br />
                                 <div>
-                                    <a  href={'/Login2'}>
+                                    <Link to="/Signup2">
                                         <Button text="NEXT"></Button>
-                                    </a> 
-                                    
+                                    </Link>  
                                 </div>
                         </form>
                 </div>       

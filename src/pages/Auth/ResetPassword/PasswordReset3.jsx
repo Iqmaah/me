@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import {Link} from 'react-router-dom'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField.jsx'
 import Button from '../../../shared-components/Form/Button.jsx'
 
@@ -22,7 +23,7 @@ const PasswordReset3 = () => {
 
                         <div className='absolute top-5 right-8 flex flex-row'>
                             <p className='text-gray-400' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>New user?</p>&nbsp;
-                            <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>Create new account</p>
+                            <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}><Link to="/" className='text-[#5B2E4F]'>Create new account</Link></p>
                         </div>
                         
                         <div className=''><br/><br/>
@@ -43,11 +44,11 @@ const PasswordReset3 = () => {
                                 </div><br />
 
                                 <div className=''> 
-                                    <Button text="RESET PAASSWORD" />
+                                    <Link to="/Login2">
+                                        <Button text="RESET PAASSWORD" />
+                                    </Link>
                                 </div><br/>
-                                <div className='flex flex-row justify-center'>
-                                   
-                                </div>
+                                
                         </form>
                     </div>      
             </div>

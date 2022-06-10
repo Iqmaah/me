@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import HerVest from './../../../assets/images/hervest.png'
 import LoginImg from './../../../assets/images/Login1.png'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField.jsx'
@@ -46,11 +47,16 @@ const Login1 = () => {
 
                                 <p className='text-[#5B2E4F] font-bold mb-14' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "14px", lineHeight: "18px"}}>Forgot password?</p>
                                 <div> 
-                                    <Button text="LOG IN" />
+                                    <Link to="/Loginmodal">
+                                        <Button text="LOG IN" />
+                                    </Link>
                                 </div><br/>
                                 <div className='flex flex-row justify-center'>
                                     <p className='text-gray-400' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>New user?</p>&nbsp;
-                                    <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>Create new account</p>
+                                    <Link to="/" className='text-[#5B2E4F]'>
+                                        <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>Create new account</p>
+                                    </Link>
+                                    
                                 </div>
                         </form>
                     </div>      
