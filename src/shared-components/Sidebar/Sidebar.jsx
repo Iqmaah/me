@@ -9,19 +9,19 @@ const Sidebar = () => {
     return (
         <nav>
 
-            <section className='MOBILE-MENU md:hidden'>
+            <section className='relative MOBILE-MENU md:hidden'>
 
-                <div className="HAMBURGER-ICON w-full space-y-2 p-5"  onClick={() => setIsNavOpen((prev) => !prev)}>
-                    <span className="block h-0.5 w-8 animate-pulse bg-[#E2698D]"></span>
-                    <span className="block h-0.5 w-8 animate-pulse bg-[#E2698D]"></span>
-                    <span className="block h-0.5 w-8 animate-pulse bg-[#E2698D]"></span>
-                </div>   
+                
 
                 <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
-                    
+                    <div className="HAMBURGER-ICON w-full space-y-2 p-5"  onClick={() => setIsNavOpen((prev) => !prev)}>
+                        <span className="block h-0.5 w-8 animate-pulse bg-[#E2698D]"></span>
+                        <span className="block h-0.5 w-8 animate-pulse bg-[#E2698D]"></span>
+                        <span className="block h-0.5 w-8 animate-pulse bg-[#E2698D]"></span>
+                    </div>
 
-                        <div 
-                        className="CROSS-ICON absolute -top-8 inset-y-0 left-52 px-0 py-8"
+                    <div 
+                        className="CROSS-ICON absolute top-0 inset-y-0 right-0 px-0 py-8"
                         onClick={() => setIsNavOpen(false)}>
                         <svg
                             style={{float:"right"}}
@@ -36,12 +36,12 @@ const Sidebar = () => {
                             <line x1="18" y1="6" x2="6" y2="18" />
                             <line x1="6" y1="6" x2="18" y2="18" />
                         </svg>
-                        </div>
+                    </div>
 
-                    <div className='hidden sm:block w-64 bg-white border-r border-gray-200'>
+                    <div className='hidden sm:block w-64 bg-white border-r border-gray-200 pb-28'>
                         <div className="p-6">
 
-                            <div className='pb-10 flex align-items-end justify-content-center'>
+                            <div className='pb-6 flex align-items-end justify-content-center'>
                                 <img src={Union} alt='Union' style={{ display: "inline" }} className="mr-4" />
                                 {/* <img src={HerVest} alt='HerVest' style={{display:"inline"}}/>  */}
                                 {/* <h1 className="text-[#5B2E4F] font-bold text-2xl">HerVest</h1> */}
@@ -170,10 +170,10 @@ const Sidebar = () => {
             </section>
 
             <section>
-                <div className='hidden md:block w-64 bg-white border-r border-gray-200'>
+                <div className='hidden md:block w-64 bg-white border-r border-gray-200 pb-28'>
                     <div className="p-6">
 
-                        <div className='pb-10 flex align-items-end justify-content-center'>
+                        <div className='pb-6 flex align-items-end justify-content-center'>
                             <img src={Union} alt='Union' style={{ display: "inline" }} className="mr-4" />
                             {/* <img src={HerVest} alt='HerVest' style={{display:"inline"}}/>  */}
                             {/* <h1 className="text-[#5B2E4F] font-bold text-2xl">HerVest</h1> */}

@@ -2,20 +2,55 @@ import Sidebar from '../../shared-components/Sidebar/Sidebar'
 import tobi from './../../assets/images/Tobi.png'
 import bgdash from './../../assets/images/bg-dash.png'
 import piggybank from './../../assets/images/piggybank.png'
-// import Plus from './../../assets/images/Plus.png'
+import Plus from './../../assets/images/Plus.png'
 import img1 from './../../assets/images/img1.png'
 import img2 from './../../assets/images/img2.png'
 import img3 from './../../assets/images/img3.png'
-import EmptyPlan from './EmptyPlan'
-
 
 const Dashboard = () => {
 
     const Plans = [
-         
+        {
+            "id" : "001",
+            "name": "Saving for rainy days",
+            "amount": "N400,000"
+          },
+
+          {
+            "id" : "003",
+            "name": "Saving for rainy days",
+            "amount": "N400,000"
+          },
+
+          {
+            "id" : "002",
+            "name": "Saving for rainy days",
+            "amount": "N400,000"
+          }
       ]
 
-     
+      const NewPlans = [
+        {
+            "id" : "001",
+            "name": "Saving for rainy days",
+            "create" : "Add another plan",
+            "picture": [Plus]
+          },
+
+          {
+            "id" : "003",
+            "name": "Saving for rainy days",
+            "create": "Create this plan",
+            "picture": [piggybank]
+          },
+
+          {
+            "id" : "002",
+            "name": "Saving for rainy days",
+            "create": "Create this plan",
+            "picture": [piggybank]
+          }
+      ]
 
     return(
     <div className="flex min-h-screen bg-slate-50 pb-20">
@@ -58,53 +93,31 @@ const Dashboard = () => {
                   <p className='text-[#B4B5C1]' style={{fontFamily: 'Satoshi', fontWeight: "500px",fontSize: "16px", lineHeight: "24px"}}>A goal without a plan is just a wish</p>
             </div><br/>
 
-            {
-                (Plans.length === 0) ?
-                    <EmptyPlan/>
-                    :
-                (
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                            {
-                                Plans.map((Plan,i) => 
 
-                                    <div key={Plan.id} className= "grid grid-rows-2 gap-4 p-6 bg-white rounded-lg border border-gray-200 shadow-md ">
-                                            <div  className="flex flex-row space-x-4">
-                                                <div className="bg-[#F4CDE0] rounded-full items-center p-4 ">
-                                                    <img src= {piggybank} alt="piggybank"/>
-                                                </div> 
-                                                <span><h2 className="text-sm pt-2" style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>{Plan.name}</h2></span>
-                                            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                {
+                    Plans.map((Plan,i) => 
 
-                                            <div>
-                                                <h2 className="font-bold pb-2" style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "24px", lineHeight: "32.4px"}}>{Plan.amount}</h2>
-                                                    
-                                                <div className="w-full bg-gray-300 h-1">
-                                                    <div className="bg-[#265859] h-1" style={{width: "45%"}}></div>
-                                                </div>  
-                                            </div>
-                                    </div>
+                        <div key={Plan.id} className= "grid grid-rows-2 gap-4 p-6 bg-white rounded-lg border border-gray-200 shadow-md ">
+                            <div  className="flex flex-row space-x-4">
+                                <div className="bg-[#F4CDE0] rounded-full items-center p-4 ">
+                                    <img src= {piggybank} alt="piggybank"/>
+                                </div> 
+                                <span><h2 className="text-sm pt-2" style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>{Plan.name}</h2></span>
+                            </div>
+
+                            <div>
+                                <h2 className="font-bold pb-2" style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "24px", lineHeight: "32.4px"}}>{Plan.amount}</h2>
                                     
-                                    
-                                )   
-                            } 
-                        </div>   
+                                    <div className="w-full bg-gray-300 h-1">
+                                        <div className="bg-[#265859] h-1" style={{width: "45%"}}></div>
+                                    </div>  
+                            </div>
+                        </div>
                         
-                )
-            }<br/>    
-
-            {/* control */}
-                {/* <div class=" top-1/2 w-full flex justify-between z-20">
-                     <label for="carousel-3" class="inline-block text-red-600 cursor-pointer -translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5">
-                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                     </svg>
-                     </label>
-                     <label for="carousel-2" class="inline-block text-red-600 cursor-pointer translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5">
-                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                     </svg>
-                     </label>
-                </div> */}
+                    )
+                } 
+            </div><br/>
 
             {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 {

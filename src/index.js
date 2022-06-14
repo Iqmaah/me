@@ -16,15 +16,12 @@ import PasswordReset2 from './pages/Auth/ResetPassword/PasswordReset2';
 import PasswordReset3 from './pages/Auth/ResetPassword/PasswordReset3';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Sidebar from './shared-components/Sidebar/Sidebar';
-import Plans from './pages/Plans/Plans';
-import EmptyPlan from './pages/Dashboard/EmptyPlan';
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Loginmodal/>
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );
