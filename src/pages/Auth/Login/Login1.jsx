@@ -45,7 +45,7 @@ const Login1 = () => {
                                     <PrimaryFormField type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)} />
                                 </div><br />
 
-                                <Link to='PasswordReset1'><p className='text-[#5B2E4F] BoldFonter mb-14 text-[14px] font-[400px] leading-4'>Forgot password?</p></Link>
+                                <Link to="/PasswordReset1"><p className='text-[#5B2E4F] BoldFonter mb-14 text-[14px] font-[400px] leading-4'>Forgot password?</p></Link>
                                 <div> 
                                     <Link to="/Loginmodal">
                                         <Button text="LOG IN" />

@@ -45,7 +45,7 @@ const PasswordReset3 = () => {
 
                                 <div className=''> 
                                     <Link to="/Login2">
-                                        <Button text="RESET PAASSWORD" />
+                                        <Button text="RESET PASSWORD" />
                                     </Link>
                                 </div><br/>
                                 
