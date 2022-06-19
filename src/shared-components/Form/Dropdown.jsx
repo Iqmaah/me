@@ -4,8 +4,8 @@ const Dropdown = ({ placeholder, onChange, valueArr }) => {
     return(
         <select 
             required
-            style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "14px", lineHeight: "18px"}} className="form-select appearance-none block w-full px-3 py-3 text-gray-700 bg-white bg-clip-padding bg-no-repeat
-             border border-solid border-gray-300 rounded-xl transition ease-in-out m-0
+             className="form-select appearance-none block w-full px-3 py-3 text-gray-700 bg-white bg-clip-padding bg-no-repeat
+             border border-solid border-gray-300 text-[14px] font-[300px] leading-5 rounded-xl transition ease-in-out m-0
             hover:border-[#D43E8A] focus:outline-none focus:ring-[#D43E8A] focus:border-[#D43E8A] focus:bg-white focus:z-10" aria-label="Default select example "
             placeholder={placeholder || "Fill in the details"} 
             onChange={onChange}

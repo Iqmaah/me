@@ -39,12 +39,12 @@ const Signup1 = () => {
                 
                 <div className="px-20 md:px-32 w-full space-y-8">
                         <div className='absolute top-5 right-5'>
-                            <p className='text-gray-800' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>Already own an account?<Link to="/Login1" className='text-[#5B2E4F]'>Log in</Link></p>
+                            <p className='text-gray-800 text-[16px] font-[500px] leading-4'>Already own an account? <Link to="/Login1" className='text-[#5B2E4F] MediumFonter'>Log in</Link></p>
                         </div>
                         <div className='pt-4'><br/>
                           
-                            <h1  style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "32px", lineHeight: "43px"}} > Creates an account </h1>
-                            <p className='text-gray-400' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}> Hey smart woman, get started by creating an account on HerVest</p>
+                            <h1 className='BoldFonter text-[32px] font-[700px] leading-10'> Create an account </h1>
+                            <p className='text-gray-400 text-[16px] font-[400px] leading-6'> Hey smart woman, get started by creating an account on HerVest</p>
                         
                         </div>
                         

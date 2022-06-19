@@ -22,13 +22,13 @@ const PasswordReset3 = () => {
                     <div className="py-16 px-10  max-w-md w-full space-y-8">
 
                         <div className='absolute top-5 right-8 flex flex-row'>
-                            <p className='text-gray-400' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>New user?</p>&nbsp;
-                            <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}><Link to="/" className='text-[#5B2E4F]'>Create new account</Link></p>
+                            <p className='text-gray-400 text-[16px] font-[500px] leading-4'>New user?</p>&nbsp;
+                            <p className='text-[#5B2E4F] text-[16px] font-[500px] leading-4'><Link to="/" className='text-[#5B2E4F] MediumFonter'>Create new account</Link></p>
                         </div>
                         
                         <div className=''><br/><br/>
                           
-                            <h1 className='font-bold text-center text-[#626375]' style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "32px", lineHeight: "43.2px"}} > Create new password </h1>
+                            <h1 className='text-center text-[#626375] BoldFonter text-[32px] font-[700px] leading-10'> Create new password </h1>
                             
                         
                         </div>

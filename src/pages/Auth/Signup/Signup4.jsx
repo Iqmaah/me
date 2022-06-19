@@ -21,8 +21,8 @@ const Signup4 = () => {
                     <div className=" px-28 py-40 w-full space-y-8">
                     
                         <div className='text-center'>
-                            <h1 className='md:text-center' style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "32px", lineHeight: "43px"}}>Confirm your account</h1>
-                            <p className='text-[#B4B5C1] text-center' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>A confirmation mail was sent to you. Please check your mail to verify your account.</p>
+                            <h1 className='md:text-center BoldFonter text-[32px] font-[700px] leading-10'>Confirm your account</h1>
+                            <p className='text-[#B4B5C1] text-center text-[16px] font-[400px] leading-6'>A confirmation mail was sent to you. Please check your mail to verify your account.</p>
                         </div><br/><br/>
 
                         <div> 

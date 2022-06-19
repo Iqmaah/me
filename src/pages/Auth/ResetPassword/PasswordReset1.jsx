@@ -19,13 +19,13 @@ const PasswordReset1 = () => {
             <div className="relative border border-white-100 rounded-2xl bg-white my-8 mx-8 flex items-center justify-center py-6">
                     <div className="py-16 px-16 lg:px-28 w-full space-y-8">
                         <div className='absolute top-10 right-12 flex flex-row'>
-                            <p className='text-gray-400' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>New user?</p>&nbsp;
-                            <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}><Link to="/" className='text-[#5B2E4F]'>Create new account</Link></p>
+                            <p className='text-gray-400 text-[16px] font-[500px] leading-4' >New user?</p>&nbsp;
+                            <p className='text-[#5B2E4F] font-bold text-[16px] font-[500px] leading-4'><Link to="/" className='text-[#5B2E4F] MediumFonter'>Create new account</Link></p>
                         </div>
                         <div className=''><br/>
                           
-                            <h1 className='font-bold' style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "32px", lineHeight: "43px"}} > Reset Password </h1>
-                            <p className='text-gray-500' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>A mail would be sent to your email</p>
+                            <h1 className='font-bold BoldFonter text-[32px] font-[700px] leading-10'> Reset Password </h1>
+                            <p className='text-gray-500  text-[16px] font-[400px] leading-6'>A mail would be sent to your email</p>
                         
                         </div>
                         

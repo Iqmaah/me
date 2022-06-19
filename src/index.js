@@ -18,13 +18,15 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import Sidebar from './shared-components/Sidebar/Sidebar';
 import Plans from './pages/Plans/Plans';
 import EmptyPlan from './pages/Dashboard/EmptyPlan';
+import CreatePlan from './pages/Plans/CreatePlan';
+import PlanSummary from './pages/Plans/PlanSummary';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Loginmodal/>
+      <App/>
     </BrowserRouter>
   </React.StrictMode>
 );

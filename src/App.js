@@ -11,6 +11,10 @@ import Loginmodal from './pages/Auth/Login/Loginmodal'
 import PasswordReset1 from './pages/Auth/ResetPassword/PasswordReset1'
 import PasswordReset2 from './pages/Auth/ResetPassword/PasswordReset2'
 import PasswordReset3 from './pages/Auth/ResetPassword/PasswordReset3'
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Plans from "./pages/Plans/Plans";
+import PlanSummary from "./pages/Plans/PlanSummary";
+import CreatePlan from "./pages/Plans/CreatePlan";
 
 
 function App() {
@@ -24,10 +28,14 @@ function App() {
             <Route  path="/Signup4" element={<Signup4 />} />
             <Route  path="/Login1" element={<Login1 />}/>
             <Route  path="/Login2" element={<Login2 />} />
-            <Route  path="/Login2" element={<Loginmodal />} />
+            <Route  path="/Loginmodal" element={<Loginmodal/>} />
             <Route  path="/PasswordReset1" element={<PasswordReset1 />} />
             <Route  path="/PasswordReset2" element={<PasswordReset2 />} />
             <Route  path="/PasswordReset3" element={<PasswordReset3 />} />
+            <Route  path="/Dashboard" element={<Dashboard />} />
+            <Route  path="/Plans" element={<Plans />} />
+            <Route  path="/PlanSummary" element={<PlanSummary />} />
+            <Route  path="/CreatePlan" element={<CreatePlan />} />
             {/* <Route path="*" element={<HomePage />} /> */}
         </Routes>
       

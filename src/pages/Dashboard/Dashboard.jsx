@@ -1,3 +1,5 @@
+import React from "react"
+import { Link } from "react-router-dom"
 import Sidebar from '../../shared-components/Sidebar/Sidebar'
 import tobi from './../../assets/images/Tobi.png'
 import bgdash from './../../assets/images/bg-dash.png'
@@ -9,7 +11,10 @@ import img3 from './../../assets/images/img3.png'
 import EmptyPlan from './EmptyPlan'
 
 
+
 const Dashboard = () => {
+
+    
 
     const Plans = [
          
@@ -31,23 +36,23 @@ const Dashboard = () => {
             </div>
 
 
-            <div className='p-5 md:p-10 rounded-lg' style={{ backgroundImage: `url(${bgdash})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", height: "" }}>
+            <div className='p-5 md:p-10 rounded-lg ' style={{ backgroundImage: `url(${bgdash})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", height: "" }}>
                 <div class="mx-auto grid grid-cols-2 gap-10 items-center lg:grid-cols-4 lg:justify-around ... text-white">
                     <div>
-                        <p className='text-[#FAFAFA] pb-2' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "14px", lineHeight: "18.9px"}}>Available Balance</p>
-                        <p className='text-[#FFFFFF]' style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "20px", lineHeight: "40.5px"}}>₦1,063,345.04</p> 
+                        <p className='text-[#FAFAFA] pb-2  text-[14px] font-[400px] leading-5'>Available Balance</p>
+                        <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦1,063,345.04</p> 
                     </div>
                     <div>
-                       <p className='text-[#FAFAFA] pb-2' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "14px", lineHeight: "18.9px"}}>Impact Investments</p>
-                       <p className='text-[#FFFFFF]' style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "20px", lineHeight: "40.5px"}}>₦1,007,345.04</p>
+                       <p className='text-[#FAFAFA] pb-2 text-[14px] font-[400px] leading-5'>Impact Investments</p>
+                       <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦1,007,345.04</p>
                     </div>
                     <div>
-                       <p className='text-[#FAFAFA] pb-2' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "14px", lineHeight: "18.9px"}}>Total Savings</p>
-                       <p className='text-[#FFFFFF]' style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "20px", lineHeight: "40.5px"}}>₦2,007,345.04</p>
+                       <p className='text-[#FAFAFA] pb-2 text-[14px] font-[400px] leading-5'>Total Savings</p>
+                       <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦2,007,345.04</p>
                     </div>
                     <div>
-                       <p className='text-[#FAFAFA] pb-2' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "14px", lineHeight: "18.9px"}}>Total Returns</p>
-                       <p className='text-[#FFFFFF]' style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "20px", lineHeight: "40.5px"}}>₦56,000.00</p>
+                       <p className='text-[#FAFAFA] pb-2 text-[14px] font-[400px] leading-5'>Total Returns</p>
+                       <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦56,000.00</p>
                     </div>  
                 </div>
             </div><br/>
@@ -72,11 +77,11 @@ const Dashboard = () => {
                                                 <div className="bg-[#F4CDE0] rounded-full items-center p-4 ">
                                                     <img src= {piggybank} alt="piggybank"/>
                                                 </div> 
-                                                <span><h2 className="text-sm pt-2" style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>{Plan.name}</h2></span>
+                                                <span><h2 className="text-sm pt-2 text-[16px] font-[400px] leading-6">{Plan.name}</h2></span>
                                             </div>
 
                                             <div>
-                                                <h2 className="font-bold pb-2" style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "24px", lineHeight: "32.4px"}}>{Plan.amount}</h2>
+                                                <h2 className="BoldFonter pb-2 text-[24px] font-[700px] leading-8">{Plan.amount}</h2>
                                                     
                                                 <div className="w-full bg-gray-300 h-1">
                                                     <div className="bg-[#265859] h-1" style={{width: "45%"}}></div>
@@ -127,18 +132,20 @@ const Dashboard = () => {
             </div> */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
-                <div className= "grid grid-rows-2 gap-4 p-6 max-w-sm rounded-lg border   border-gray-200 shadow-md bg-[#5B2E4F] text-white" style={{ backgroundImage: `url(${img1})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
+                <div className= "grid grid-rows-2 gap-4 p-6 max-w-sm rounded-lg border border-gray-200 shadow-md bg-[#5B2E4F] text-white " style={{ backgroundImage: `url(${img1})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
+                    <Link to="/CreatePlan">   
                         <div className="">
-                            <h2 className="text-base font-bold" style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "16px", lineHeight: "2i.6px"}}> Create a savings plan </h2>  
-                            <p className="text-xs pb-2" style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "10px", lineHeight: "13.5px"}}> Earn up to 12% </p> 
+                            <h2 className="text-base BoldFonter text-[16px] font-[700px] leading-5"> Create a savings plan </h2>  
+                            <p className="pb-2 text-[10px] font-[400px] leading-3"> Earn up to 12% </p> 
                         </div>
+                    </Link>    
                 </div> 
 
                 <div className= "grid grid-rows-2 gap-4 p-6 max-w-sm rounded-lg border  border-gray-200 shadow-md bg-[#265859]" style={{ backgroundImage: `url(${img2})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
                         <div className="">
-                            <h2 className="text-sm font-bold" style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "16px", lineHeight: "21.6px"}}> Invest in a </h2> 
-                            <h2 className="text-sm font-bold" style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "16px", lineHeight: "21.6px"}}>Female Farmer </h2>
-                            <p className="text-xs pb-2" style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "10px", lineHeight: "13.5px"}}> Get up to 25% returns per annum</p>
+                            <h2 className="text-sm BoldFonter text-[16px] font-[700px] leading-5"> Invest in a </h2> 
+                            <h2 className="text-sm BoldFonter text-[16px] font-[700px] leading-5">Female Farmer </h2>
+                            <p className="text-xs pb-2 text-[10px] font-[400px] leading-3"> Get up to 25% returns per annum</p>
                             
                         </div>
                 </div> 
@@ -146,9 +153,9 @@ const Dashboard = () => {
 
                 <div className= "grid grid-rows-2 gap-4 p-6 max-w-sm rounded-lg border   border-gray-200 shadow-md bg-[#F2F1F3]" style={{ backgroundImage: `url(${img3})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
                         <div className="">
-                            <h2 className="text-[#5B2E4F] font-bold" style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "16px", lineHeight: "21.6px"}}> Invite your girls to  </h2> 
-                            <h2 className="text-[#5B2E4F] font-bold" style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "16px", lineHeight: "21.6px"}}>HerVest </h2> 
-                            <p className="text-xs pb-2" style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "10px", lineHeight: "13.5px"}}> Share your girl code</p>
+                            <h2 className="text-[#5B2E4F] font-bold text-[16px] font-[700px] leading-5"> Invite your girls to  </h2> 
+                            <h2 className="text-[#5B2E4F] font-bold text-[16px] font-[700px] leading-">HerVest </h2> 
+                            <p className="text-xs pb-2 text-[10px] font-[400px] leading-"> Share your girl code</p>
                             
                         </div>
                         <div className="mt-5">

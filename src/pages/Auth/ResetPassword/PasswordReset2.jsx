@@ -15,8 +15,8 @@ const PasswordReset2 = () => {
                         </div>
                         <div className=''><br/>
                           
-                            <h1 className='font-bold text-center' style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "32px", lineHeight: "43px"}} > Reset link has been sent </h1>
-                            <p className='text-gray-500 text-center' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>A password reset mail was sent to you. Please check your mail to verify your account.</p>
+                            <h1 className='text-center BoldFonter text-[32px] font-[700px] leading-10'> Reset link has been sent </h1>
+                            <p className='text-gray-500 text-center text-[16px] font-[400px] leading-6'>A password reset mail was sent to you. Please check your mail to verify your account.</p>
                         
                         </div>
                         

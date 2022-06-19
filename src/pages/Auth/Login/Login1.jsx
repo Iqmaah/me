@@ -30,8 +30,8 @@ const Login1 = () => {
                         
                         <div className=''><br/>
                           
-                            <h1 className='font-bold' style={{fontFamily: 'Satoshi', fontWeight: "700px",fontSize: "32px", lineHeight: "43px"}} > Log in </h1>
-                            <p className='text-gray-500' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>Feels good to have you back</p>
+                            <h1 className='font-bold BoldFonter text-[32px] font-[700px] leading-10'  > Log in </h1>
+                            <p className='text-gray-500 text-[16px] font-[400px] leading-6'>Feels good to have you back</p>
                         
                         </div>
                         
@@ -45,16 +45,16 @@ const Login1 = () => {
                                     <PrimaryFormField type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)} />
                                 </div><br />
 
-                                <p className='text-[#5B2E4F] font-bold mb-14' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "14px", lineHeight: "18px"}}>Forgot password?</p>
+                                <p className='text-[#5B2E4F] BoldFonter mb-14 text-[14px] font-[400px] leading-4'>Forgot password?</p>
                                 <div> 
                                     <Link to="/Loginmodal">
                                         <Button text="LOG IN" />
                                     </Link>
                                 </div><br/>
                                 <div className='flex flex-row justify-center'>
-                                    <p className='text-gray-400' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>New user?</p>&nbsp;
-                                    <Link to="/" className='text-[#5B2E4F]'>
-                                        <p className='text-[#5B2E4F] font-bold' style={{fontFamily: 'Satoshi', fontWeight: "300px",fontSize: "16px", lineHeight: "22px"}}>Create new account</p>
+                                    <p className='text-gray-400 text-[16px] font-[300px] leading-5'>New user?</p>&nbsp;
+                                    <Link to="/Loginmodal" className='text-[#5B2E4F]'>
+                                        <p className='text-[#5B2E4F] BoldFonter text-[16px] font-[300px] leading-5'>Create new account</p>
                                     </Link>
                                     
                                 </div>
