@@ -39,7 +39,7 @@ const Sidebar = () => {
                         </svg>
                         </div>
 
-                    <div className='hidden sm:block w-64 bg-white border-r border-gray-200'>
+                    <div className='hidden sm:block w-60 bg-white border-r border-gray-200'>
                         <div className="p-6">
 
                             <div className='pb-10 flex align-items-end justify-content-center'>
@@ -171,7 +171,7 @@ const Sidebar = () => {
             </section>
 
             <section>
-                <div className='hidden md:block w-64 bg-white border-r border-gray-200'>
+                <div className='hidden md:block w-60 bg-white border-r border-gray-200'>
                     <div className="p-6">
 
                         <div className='pb-10 flex align-items-end justify-content-center'>

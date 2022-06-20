@@ -20,13 +20,14 @@ import Plans from './pages/Plans/Plans';
 import EmptyPlan from './pages/Dashboard/EmptyPlan';
 import CreatePlan from './pages/Plans/CreatePlan';
 import PlanSummary from './pages/Plans/PlanSummary';
+import PaymentMethod from './pages/Plans/PaymentMethod';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App/>
+      <PaymentMethod/>
     </BrowserRouter>
   </React.StrictMode>
 );
