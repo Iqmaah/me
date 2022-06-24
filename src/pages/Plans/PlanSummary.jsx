@@ -93,7 +93,7 @@ const PlanSummary = () => {
                     </div>
                     <div className="flex justify-end">
                         <div>
-                            <Link to="/">
+                            <Link to="/PaymentMethod">
                                 <Button text="NEXT" />
                             </Link>
                         </div>
