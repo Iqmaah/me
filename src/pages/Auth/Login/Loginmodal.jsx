@@ -15,7 +15,7 @@ const Loginmodal = () => {
                     <div className="flex items-end sm:items-center justify-center min-h-full p-4 sm:p-0">
                         <div className=" border-2 bg-white rounded-[2.5rem]  overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
                         <div className="relative bg-white rounded-3xl">
-                        <div className="px-12 pb-10 pt-12" >
+                        <div className="px-12 pb-10 pt-12">
                             <h1 className="text-center BoldFonter mb-2 px-4 text-[24px] font-[700px] leading-8" >New on HerVest</h1>
                             <p className="text-center text-gray-600 px-4 pb-10 text-[14px] font-[400px] leading-5">
                                 You're at the right place! At HerVest, you grow your money and grow into your best self. Here's why you'll love it here.

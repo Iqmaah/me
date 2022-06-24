@@ -24,14 +24,14 @@ const CreatePlan = () => {
                     <h classname="text-[32px] font-[700px] leading-8 ">Plans</h>
                 </div>
                 <div className="mx-8 mb-8">
-                    <span className="text-[#B4B5C1] text-[14px] font-[400px] leading-5 ">Plans</span>
+                    <span className="text-[#B4B5C1] text-[14px] font-[400px] leading-5 "><Link to="/Plans">Plans</Link></span>
                     <span className="ml-2">
                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.66602 11.424L11.9993 8.09066L8.66602 4.75732" stroke="#5B2E4F" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M4 11.424L7.33333 8.09066L4 4.75732" stroke="#5B2E4F" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.66602 11.424L11.9993 8.09066L8.66602 4.75732" stroke="#5B2E4F" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M4 11.424L7.33333 8.09066L4 4.75732" stroke="#5B2E4F" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     </span>
-                    <span className="text-[#5B2E4F] text-[14px] font-[400px] leading-5 ml-2">Create a new plan</span>
+                    <span className="text-[#5B2E4F] text-[14px] font-[400px] leading-5 ml-2"><Link to="/CreatePlan">Create a new plan</Link></span>
                 </div>
 
                 <div className='bg-white grid sm:grid-rows-1 md:grid-cols-2 gap-32 h-screen rounded-2xl m-8 px-12 py-12'>

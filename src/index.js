@@ -21,6 +21,9 @@ import EmptyPlan from './pages/Dashboard/EmptyPlan';
 import CreatePlan from './pages/Plans/CreatePlan';
 import PlanSummary from './pages/Plans/PlanSummary';
 import PaymentMethod from './pages/Plans/PaymentMethod';
+import SinglePlanPage from './pages/Plans/SinglePlanPage';
+import TopUpPlanPage from './pages/Plans/TopUpPlanPage';
+import PlansWithdraw from './pages/Plans/PlansWithdraw';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

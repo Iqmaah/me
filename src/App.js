@@ -15,6 +15,10 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Plans from "./pages/Plans/Plans";
 import PlanSummary from "./pages/Plans/PlanSummary";
 import CreatePlan from "./pages/Plans/CreatePlan";
+import PaymentMethod from "./pages/Plans/PaymentMethod";
+import SinglePlanPage from "./pages/Plans/SinglePlanPage";
+import TopUpPlanPage from "./pages/Plans/TopUpPlanPage";
+import PlansWithdraw from "./pages/Plans/PlansWithdraw";
 
 
 function App() {
@@ -36,6 +40,10 @@ function App() {
             <Route  path="/Plans" element={<Plans />} />
             <Route  path="/PlanSummary" element={<PlanSummary />} />
             <Route  path="/CreatePlan" element={<CreatePlan />} />
+            <Route  path="/PaymentMethod" element={<PaymentMethod />} />
+            <Route  path="/SinglePlanPage" element={<SinglePlanPage />} />
+            <Route  path="/TopUpPlanPage" element={<TopUpPlanPage />} />
+            <Route  path="/PlansWithdraw" element={<PlansWithdraw />} />
             {/* <Route path="*" element={<HomePage />} /> */}
         </Routes>
       

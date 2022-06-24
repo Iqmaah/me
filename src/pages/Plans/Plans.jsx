@@ -1,9 +1,8 @@
 import {Link} from 'react-router-dom'
 import Sidebar from "../../shared-components/Sidebar/Sidebar"
-import Loginmodal from '../Auth/Login/Loginmodal'
 import piggybank from './../../assets/images/piggybank.png'
 import Plus from './../../assets/images/Plus.png'
-import arrows from './../../assets/images/arrow.png'
+
 
 const Plans = () => {
 
@@ -47,8 +46,8 @@ const Plans = () => {
                     <span className="text-[#B4B5C1] text-[14px] font-[400px] leading-5 ">My Savings</span>
                     <span className="ml-2">
                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8.66602 11.424L11.9993 8.09066L8.66602 4.75732" stroke="#5B2E4F" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M4 11.424L7.33333 8.09066L4 4.75732" stroke="#5B2E4F" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.66602 11.424L11.9993 8.09066L8.66602 4.75732" stroke="#5B2E4F" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M4 11.424L7.33333 8.09066L4 4.75732" stroke="#5B2E4F" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     </span>
                     <span className="text-[#5B2E4F] text-[14px] font-[400px] leading-5 ml-2">My Investments</span>
