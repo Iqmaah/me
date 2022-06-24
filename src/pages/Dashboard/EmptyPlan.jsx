@@ -21,7 +21,7 @@ const EmptyPlan = () => {
 
           {
             "id" : "002",
-            "name": "Saving for rainy days",
+            "name": "Harvard MBA",
             "create": "Create this plan",
             "picture": [piggybank]
           }
