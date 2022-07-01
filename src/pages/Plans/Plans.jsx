@@ -59,7 +59,7 @@ const Plans = () => {
                 {
                     Plans.map((Plan,i) => 
 
-                        <div key={Plan.id} className= "grid grid-rows-2 gap-4 p-6 bg-white rounded-lg border border-gray-200 shadow-md ">
+                        <Link key={Plan.id} to="/SinglePlanPage" className= "grid grid-rows-2 gap-4 p-6 bg-white rounded-lg border border-gray-200 shadow-md ">
                             <div  className="flex flex-row space-x-4">
                                 <div className="bg-[#F4CDE0] rounded-full items-center p-4 ">
                                     <img src= {piggybank} alt="piggybank"/>
@@ -74,7 +74,7 @@ const Plans = () => {
                                         <div className="bg-[#5B2E4F] h-1" style={{width: "45%"}}></div>
                                     </div>  
                             </div>
-                        </div>
+                        </Link>
                         
                     )
                 } 

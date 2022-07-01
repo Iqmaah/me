@@ -61,7 +61,7 @@ const TopUpPlanPage = () => {
                                     
                                 </div><br/>            
                                 <div> 
-                                        <Link to="/PaymentMethod"> 
+                                        <Link to="/PlanPaymentMethod"> 
                                             <Button text="NEXT"></Button>
                                         </Link>
                                 </div>

@@ -1,4 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
+import { useState  } from "react";
 // import { Link } from "react-router-dom"
 import './App.css';
 import Signup1 from './pages/Auth/Signup/Signup1';
@@ -15,16 +16,30 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Plans from "./pages/Plans/Plans";
 import PlanSummary from "./pages/Plans/PlanSummary";
 import CreatePlan from "./pages/Plans/CreatePlan";
-import PaymentMethod from "./pages/Plans/PaymentMethod";
+import PaymentMethod from "./pages/Plans/PlanPaymentMethod";
 import SinglePlanPage from "./pages/Plans/SinglePlanPage";
 import TopUpPlanPage from "./pages/Plans/TopUpPlanPage";
 import PlansWithdraw from "./pages/Plans/PlansWithdraw";
-
+import DashboardModal from "./contexts/DashboardModal";
+import TopUpBankAcc from "./pages/Plans/TopUpBankAcc";
+import FundPurse from "./pages/FundPurse/FundPurse";
+import Purse from "./pages/FundPurse/Purse";
+import PlanPaymentMethod from "./pages/Plans/PlanPaymentMethod";
+import SendMoney1 from "./pages/FundPurse/TransferFromPurse/SendMoney1";
+import SendMoney2 from "./pages/FundPurse/TransferFromPurse/BankAccount/SendMoney2";
+import SendMoney3 from "./pages/FundPurse/TransferFromPurse/HervestUser/SendMoney3";
+import HervestUser from "./pages/FundPurse/TransferFromPurse/HervestUser/HervestUser";
+import BankAccount from "./pages/FundPurse/TransferFromPurse/BankAccount/BankAccount";
+import SavingsHistory from "./shared-components/SavingsHistory";
+import SavingsPlan from "./pages/FundPurse/TransferFromPurse/SavingsPlan";
 
 function App() {
+
+  const [showDashboardModal, setShowDashboardModal] = useState(true);
+
   return (
     <>
-      
+      <DashboardModal.Provider value={ {showDashboardModal,setShowDashboardModal} }>
         <Routes>   
             <Route  path="/" element={<Signup1 />} />
             <Route  path="/Signup2" element={<Signup2 />} />
@@ -40,13 +55,22 @@ function App() {
             <Route  path="/Plans" element={<Plans />} />
             <Route  path="/PlanSummary" element={<PlanSummary />} />
             <Route  path="/CreatePlan" element={<CreatePlan />} />
-            <Route  path="/PaymentMethod" element={<PaymentMethod />} />
+            <Route  path="/PlanPaymentMethod" element={<PlanPaymentMethod />} />
             <Route  path="/SinglePlanPage" element={<SinglePlanPage />} />
             <Route  path="/TopUpPlanPage" element={<TopUpPlanPage />} />
             <Route  path="/PlansWithdraw" element={<PlansWithdraw />} />
+            <Route  path="/TopUpBankAcc" element={<TopUpBankAcc />} />
+            <Route  path="/Purse" element={<Purse />} />
+            <Route  path="/FundPurse" element={<FundPurse />} />
+            <Route  path="/SendMoney1" element={<SendMoney1 />} />
+            <Route  path="/SendMoney2" element={<SendMoney2 />} />
+            <Route  path="/SendMoney3" element={<SendMoney3 />} />
+            <Route  path="/BankAccount" element={<BankAccount />} />
+            <Route  path="/HervestUser" element={<HervestUser />} />
+            <Route  path="/SavingsPlan" element={<SavingsPlan />} />
             {/* <Route path="*" element={<HomePage />} /> */}
         </Routes>
-      
+      </DashboardModal.Provider> 
     </>
   );
 }

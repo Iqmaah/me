@@ -1,17 +1,18 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './Login.css'
 import Dashboard from '../../Dashboard/Dashboard'
+import DashboardModal from '../../../contexts/DashboardModal'
 
-const Loginmodal = () => {
+const Loginmodal = ({isShow=true}) => {
 
-        const [showModal, setShowModal] = useState(true);
+    const {setShowDashboardModal } = useContext(DashboardModal)
 
         return(
-            <div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-            <div className="fixed inset-0 bg-opacity-75 transition-opacity"></div>
-                <div className="fixed z-10 inset-0 overflow-y-auto border">
+            <div className="relative z-10 transition-opacity  border border-red-600" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+           
+                <div className="fixed z-10 inset-0 overflow-y-auto bg-opacity-75 bg-[#33343D] ">
                     <div className="flex items-end sm:items-center justify-center min-h-full p-4 sm:p-0">
                         <div className=" border-2 bg-white rounded-[2.5rem]  overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
                         <div className="relative bg-white rounded-3xl">
@@ -21,15 +22,18 @@ const Loginmodal = () => {
                                 You're at the right place! At HerVest, you grow your money and grow into your best self. Here's why you'll love it here.
                             </p>
 
-                            <div className='absolute right-5 top-2' onClick={() => setShowModal(false)} >
-                                <Link to='/Dashboard'>
-                                    <button type="button" className="text-gray-400 bg-[#5B2E4F]  hover:bg-[#5B2E4F] hover:text-gray-900 rounded-lg text-sm p-1 mr-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="authentication-modal">
+                            <div className='absolute right-5 top-2' >
+                             
+                                    <button 
+                                        type="button" 
+                                        className="text-gray-400 bg-[#5B2E4F]  hover:bg-[#5B2E4F] hover:text-gray-900 rounded-lg text-sm p-1 mr-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" 
+                                        onClick={() => setShowDashboardModal(false)}
+                                        >
                                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>  
                                     </button>
-                                </Link>
                             </div>
 
-                            <div className="grid grid-rows-3 gap-4">
+                            <div className="flex flex-col-3 gap-4">
                                  <div className=''>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[#5B2E4F]"  viewBox="0 0 20 20" fill="currentColor">
                                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -64,7 +68,7 @@ const Loginmodal = () => {
                         </div>
                     </div>
                 </div>
-        </div>
+             </div>
 
     )
 }

@@ -52,7 +52,7 @@ const PlansWithdraw = () => {
                                     
                                 </div><br/>            
                                 <div> 
-                                        <Link to="/PaymentMethod"> 
+                                        <Link to="/TopUpBankAcc"> 
                                             <Button text="NEXT"></Button>
                                         </Link>
                                 </div>

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import Sidebar from '../../shared-components/Sidebar/Sidebar'
 import tobi from './../../assets/images/Tobi.png'
@@ -9,12 +9,13 @@ import img1 from './../../assets/images/img1.png'
 import img2 from './../../assets/images/img2.png'
 import img3 from './../../assets/images/img3.png'
 import EmptyPlan from './EmptyPlan'
-
+import LoginModal from '../Auth/Login/Loginmodal'
+import DashboardModal from "../../contexts/DashboardModal"
 
 
 const Dashboard = () => {
 
-    
+ const {showDashboardModal } = useContext(DashboardModal)
 
     const Plans = [
          
@@ -24,9 +25,11 @@ const Dashboard = () => {
 
     return(
     <div className="flex min-h-screen bg-slate-50 pb-20">
+       { showDashboardModal ?  <LoginModal  /> : null }
         <Sidebar/>
 
         <div className='p-6 '>
+            
             <div className='flex flex-row space-x-4 pb-2'>
                 <img src={tobi} className=" w-14 h-14"></img>
                 <div className="flex flex-col">

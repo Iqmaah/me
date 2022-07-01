@@ -3,7 +3,7 @@ import Sidebar from "../../shared-components/Sidebar/Sidebar"
 import Button from "../../shared-components/Form/Button"
 import SavingsHistory from "../../shared-components/SavingsHistory"
 
-const SinglePlanPage = () => {
+const MaturedSinglePlanPage = () => {
     return(
         <div className="flex bg-slate-50 pb-20">
             <Sidebar/>
@@ -23,8 +23,7 @@ const SinglePlanPage = () => {
                         <span className="text-[#5B2E4F] text-[14px] font-[400px] leading-5 ml-2"><Link to="/SinglePlanPage">MBA Harvard</Link></span>
                     </div>
 
-                    <div className='mx-8 p-5 md:p-10 rounded-lg bg-[#5B2E4F]
-] '>
+                    <div className='mx-8 p-5 md:p-10 rounded-lg bg-[#5B2E4F]'>
                         <div className="mx-auto grid grid-cols-1 gap-10 items-center md:grid-cols-3 md:gap-40 lg:grid-cols-3 lg:gap-60 lg:justify-around ... text-white">
                             <div>
                                 <p className='text-[#FAFAFA] pb-2  text-[14px] font-[400px] leading-5'>Balance</p>
@@ -50,8 +49,8 @@ const SinglePlanPage = () => {
                             <div className="text-[#5B2E4F] px-12 py-2 rounded-md border border-[#5B2E4F] text-[14px] font-[500px] leading-5">EDIT PLAN</div>
                         </Link>
                          
-                        <Link to="/Plans">
-                            <div className="text-[#5B2E4F] px-12 py-2 rounded-md border border-[#5B2E4F] text-[14px] font-[500px] leading-5">PAUSE PLAN</div>
+                        <Link to="/PlansWithdraw">
+                            <div className="text-[#5B2E4F] px-12 py-2 rounded-md border border-[#5B2E4F] text-[14px] font-[500px] leading-5">WITHDRAW</div>
                         </Link>
                          
                     </div> 
@@ -59,9 +58,22 @@ const SinglePlanPage = () => {
 
                     <div className="grid grid-cols-2 gap-8">
 
-                        <div className="grid grid-rows-2 ml-8 mt-4">
+                        <div className="flex flex-col gap-4 ml-8 mt-4">
+                      
+                            <div className="border border-[#F4CDE0] rounded-xl p-4 mr-6 bg-[#FBEAEF]" style={{height: "122px",}} >
+                                <h className="text-[16px] font-[500px] leading-5 MediumFonter text-[#B4B5C1] ">Savings target</h>
+                                <div className="mt-2 flex flex-row justify-between">
+                                    
+                                    <div className="text-[20px] font-[700px] leading-7 BoldFonter">N500,000.00</div>
+                                    <div className="text-[14px] font-[400px] leading-5">100% reached</div>
+                                    
+                                </div>
+                                
+                               
+                                
+                            </div>
 
-                            <div className="rounded-2xl p-8 mr-8 mb-6 bg-white">
+                            <div className="rounded-2xl p-8 mr-8 bg-white">
                                 <div className="mb-6">
                                     <p className="text-[#666666] text-[16px] font-[400px] leading-5 pb-2">Plan</p>
                                     <h className="text-[20px] font-[400px] leading-6 BoldFonter">MBA Harvard</h>
@@ -99,16 +111,6 @@ const SinglePlanPage = () => {
                                     </div>
                                 </div>
 
-                            </div>
-
-                            <div className="border border-[#F4CDE0] rounded 2xl text-center p-4 mr-6" style={{height: "122px",}}>
-                                <h className="text-[16px] font-[500px] leading-5 MediumFonter ">Stop automated saving?</h>
-                                <div className="mt-4 px-12">
-                                    
-                                        <Button text="PAUSE SAVINGS" className></Button>
-                                    
-                                </div>
-                                
                             </div>                           
 
                         </div>
@@ -126,4 +128,4 @@ const SinglePlanPage = () => {
     )
 }
 
-export default SinglePlanPage
+export default MaturedSinglePlanPage

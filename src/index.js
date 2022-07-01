@@ -20,10 +20,18 @@ import Plans from './pages/Plans/Plans';
 import EmptyPlan from './pages/Dashboard/EmptyPlan';
 import CreatePlan from './pages/Plans/CreatePlan';
 import PlanSummary from './pages/Plans/PlanSummary';
-import PaymentMethod from './pages/Plans/PaymentMethod';
+import PaymentMethod from './shared-components/PaymentMethod';
 import SinglePlanPage from './pages/Plans/SinglePlanPage';
 import TopUpPlanPage from './pages/Plans/TopUpPlanPage';
 import PlansWithdraw from './pages/Plans/PlansWithdraw';
+import SavingsHistory from './shared-components/SavingsHistory';
+import PlanPaymentMethod from './pages/Plans/PlanPaymentMethod';
+import PursePaymentMethod from './pages/FundPurse/PursePaymentMethod';
+import BankAccount from './pages/FundPurse/TransferFromPurse/BankAccount/BankAccount';
+import TopUpBankAcc from './pages/Plans/TopUpBankAcc';
+import MaturedSinglePlanPage from './pages/Plans/MaturedSinglePlanPage';
+import Purse from './pages/FundPurse/Purse';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
