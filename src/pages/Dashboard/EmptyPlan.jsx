@@ -33,8 +33,8 @@ const EmptyPlan = () => {
             
           {
               NewPlans.map((NewPlan,i) => 
-              <Link to="/CreatePlan">
-                  <div key={NewPlan.id} className= "grid grid-rows-2 gap-4 pt-5 pr-5 pl-5  bg-white rounded-lg border border-gray-200 shadow-md ">
+              <Link to="/CreatePlan" key={i}>
+                  <div  className= "grid grid-rows-2 gap-4 pt-5 pr-5 pl-5  bg-white rounded-lg border border-gray-200 shadow-md ">
                       <div className="relative flex flex-row space-x-4">
                           <div className="bg-[#F4CDE0] rounded-full items-center p-4 ">
                               <img src= {NewPlan.picture} alt="piggybank"/>
@@ -43,7 +43,7 @@ const EmptyPlan = () => {
                       </div>
 
                       <div className='flex justify-end mt-2 text-[#265859]'>
-                        <Link to="/CreatePlan"><h2 className="text-[16px] font-[400px] leading-6">{NewPlan.create}</h2></Link> 
+                        <h2 className="text-[16px] font-[400px] leading-6">{NewPlan.create}</h2> 
                       </div>
                   </div> 
                 </Link>     

@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-const DashboardModal = createContext()
+const DashboardModal = createContext(true)
 
 
 export default DashboardModal

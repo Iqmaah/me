@@ -47,13 +47,13 @@ const Login1 = () => {
 
                                 <Link to="/PasswordReset1"><p className='text-[#5B2E4F] BoldFonter mb-14 text-[14px] font-[400px] leading-4'>Forgot password?</p></Link>
                                 <div> 
-                                    <Link to="/Loginmodal">
+                                    <Link to="/Dashboard">
                                         <Button text="LOG IN" />
                                     </Link>
                                 </div><br/>
                                 <div className='flex flex-row justify-center'>
                                     <p className='text-gray-400 text-[16px] font-[300px] leading-5'>New user?</p>&nbsp;
-                                    <Link to="/Dashboard" className='text-[#5B2E4F]'>
+                                    <Link to="/" className='text-[#5B2E4F]'>
                                         <p className='text-[#5B2E4F] BoldFonter text-[16px] font-[300px] leading-5'>Create new account</p>
                                     </Link>
                                     

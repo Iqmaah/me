@@ -15,7 +15,7 @@ import DashboardModal from "../../contexts/DashboardModal"
 
 const Dashboard = () => {
 
- const {showDashboardModal } = useContext(DashboardModal)
+  const { showDashboardModal } = useContext(DashboardModal)
 
     const Plans = [
          
@@ -40,7 +40,7 @@ const Dashboard = () => {
 
 
             <div className='p-5 md:p-10 rounded-lg ' style={{ backgroundImage: `url(${bgdash})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", height: "" }}>
-                <div class="mx-auto grid grid-cols-2 gap-10 items-center lg:grid-cols-4 lg:justify-around ... text-white">
+                <div className="mx-auto grid grid-cols-2 gap-10 items-center lg:grid-cols-4 lg:justify-around ... text-white">
                     <div>
                         <p className='text-[#FAFAFA] pb-2  text-[14px] font-[400px] leading-5'>Available Balance</p>
                         <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦1,063,345.04</p> 
@@ -162,9 +162,9 @@ const Dashboard = () => {
                             
                         </div>
                         <div className="mt-5">
-                        <a href="#" className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-[#E2698D] rounded-lg hover:bg-rose-500 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
+                        <Link to="" className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-[#E2698D] rounded-lg hover:bg-rose-500 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
                             HG7FIB   
-                        </a>
+                        </Link>
                     
                         </div>
                 </div> 
