@@ -51,7 +51,7 @@ const Login2 = () => {
                                     </Link>
                                 </div><br/>
                                 <div className='flex justify-center'>
-                                    <Link to="/">
+                                    <Link to="/Dashboard">
                                         <p className='text-[#5B2E4F] BoldFonter text-[16px] font-[700px] leading-5'>Sign up to another account</p>
                                     </Link>
                                 </div>
