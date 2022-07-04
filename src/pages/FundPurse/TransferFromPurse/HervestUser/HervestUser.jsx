@@ -38,7 +38,7 @@ const HervestUser = () => {
                             <path d="M4 11.424L7.33333 8.09066L4 4.75732" stroke="#5B2E4F" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                     </span>
-                    <span className="text-[#5B2E4F] text-[14px] font-[400px] leading-5 ml-2"><Link to="/PlansWithdraw">Send money to an HerVest user</Link></span>
+                    <span className="text-[#5B2E4F] text-[14px] font-[400px] leading-5 ml-2"><Link to="/HervestUser">Send money to an HerVest user</Link></span>
                 </div>
 
                 <div className="bg-white rounded-2xl m-8 px-12 py-8">

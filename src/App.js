@@ -32,6 +32,7 @@ import HervestUser from "./pages/FundPurse/TransferFromPurse/HervestUser/Hervest
 import BankAccount from "./pages/FundPurse/TransferFromPurse/BankAccount/BankAccount";
 import SavingsHistory from "./shared-components/SavingsHistory";
 import SavingsPlan from "./pages/FundPurse/TransferFromPurse/SavingsPlan";
+import PursePaymentMethod from "./pages/FundPurse/PursePaymentMethod";
 
 function App() {
 
@@ -56,6 +57,7 @@ function App() {
             <Route  path="/PlanSummary" element={<PlanSummary />} />
             <Route  path="/CreatePlan" element={<CreatePlan />} />
             <Route  path="/PlanPaymentMethod" element={<PlanPaymentMethod />} />
+            <Route  path="/PursePaymentMethod" element={<PursePaymentMethod />} />
             <Route  path="/SinglePlanPage" element={<SinglePlanPage />} />
             <Route  path="/TopUpPlanPage" element={<TopUpPlanPage />} />
             <Route  path="/PlansWithdraw" element={<PlansWithdraw />} />

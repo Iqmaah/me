@@ -40,7 +40,7 @@ const Dashboard = () => {
 
 
             <div className='p-5 md:p-10 rounded-lg ' style={{ backgroundImage: `url(${bgdash})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", height: "" }}>
-                <div className="mx-auto grid grid-cols-2 gap-10 items-center lg:grid-cols-4 lg:justify-around ... text-white">
+                <div className="mx-auto grid grid-cols-2 gap-10 items-center lg:grid-cols-4 lg:justify-between text-white">
                     <div>
                         <p className='text-[#FAFAFA] pb-2  text-[14px] font-[400px] leading-5'>Available Balance</p>
                         <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦1,063,345.04</p> 
