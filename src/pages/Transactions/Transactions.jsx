@@ -81,7 +81,7 @@ const Transactions= () => {
                 </div>
 
                 <div className="bg-white p-8 rounded-2xl m-4 border">
-                    <div className="flex flex-row  space-x-8 items-center pb-6 ">
+                    <div className="flex flex-row  space-x-8 items-center pb-6  ">
                         <div>
                             <p className='text-[14px] font-[400px] leading-5'>All</p>
                         </div>
@@ -100,16 +100,16 @@ const Transactions= () => {
                         {
                             Transactions.map((Transaction,i) =>
 
-                                <div key={Transaction.id} className="flex flex-row pt-6">
-                                    <div className="flex justify-between ">
+                                <div key={Transaction.id} className="flex flex-row pt-6 justify-between" style={{ width: "900px"}}>
+                                    <div className="flex">
                                         <span><img src={Transaction.image}></img></span>
-                                        <span className='flex flex-col items-center' >
+                                        <span className='flex flex-col items-center pl-2' >
                                             <div className='text-[14px] font-[400px] leading-6 '>{Transaction.name}</div>
                                             <div className='text-[12px] font-[700px] leading-5 text-[#B4B5C1] pl-6'> {Transaction.date} </div>
                                         </span>
                                     </div>
 
-                                    <div className=''>
+                                    <div className='flex justify-end'>
                                         <div className='text-[16px] font-[400px] leading-6'> {Transaction.amount} </div>
                                     </div>
                                     

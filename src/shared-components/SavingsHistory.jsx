@@ -41,7 +41,7 @@ const SavingsHistory = () => {
     ]
 
     return(
-        <div className="bg-white p-8 rounded-2xl m-4 border">
+        <div className="bg-white p-8 rounded-2xl ml-8 border" style={{width:"920px"}}>
                 <div className="flex flex-row items-center justify-between pb-6 ">
                     <div>
                         <p className='text-[14px] font-[400px] leading-5'>Savings history</p>

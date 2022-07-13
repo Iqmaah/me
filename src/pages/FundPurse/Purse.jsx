@@ -17,7 +17,7 @@ const Purse = () => {
                        
                     </div>
 
-                    <div className='mx-8 p-5 md:p-10 rounded-lg bg-[#5B2E4F] w-full '>
+                    <div className='mx-8 p-5 md:p-10 rounded-lg bg-[#5B2E4F] w-full' >
                         <div className="mx-auto grid grid-cols-1 gap-10 items-center md:grid-cols-2 md:gap-40 lg:grid-cols-2 lg:gap-96 lg:justify-between text-white">
                             <div>
                                 <p className='text-[#FAFAFA] pb-2  text-[14px] font-[400px] leading-5'>Purse Balance</p>
@@ -44,7 +44,7 @@ const Purse = () => {
                     <br/>
 
                     
-                        <SavingsHistory/>
+                        <SavingsHistory />
                     
 
                     
