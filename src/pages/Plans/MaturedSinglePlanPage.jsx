@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 import Sidebar from "../../shared-components/Sidebar/Sidebar"
-import Button from "../../shared-components/Form/Button"
 import SavingsHistory from "../../shared-components/SavingsHistory"
 
 const MaturedSinglePlanPage = () => {
@@ -40,17 +39,17 @@ const MaturedSinglePlanPage = () => {
                         </div>
                     </div><br/>
 
-                    <div className="grid grid-cols-3 justify-items-center">
+                    <div className="grid grid-cols-3 gap-8 mx-32">
                         <Link to="/TopUpPlanPage">
-                            <div className="text-white px-12 py-2 rounded-md bg-[#5B2E4F] text-[14px] font-[500px] leading-5">TOP UP</div>
+                            <div className="text-white text-center px-12 py-2 rounded-md bg-[#5B2E4F] text-[14px] font-[500px] leading-5">TOP UP</div>
                         </Link>
 
                         <Link to="/Plans">
-                            <div className="text-[#5B2E4F] px-12 py-2 rounded-md border border-[#5B2E4F] text-[14px] font-[500px] leading-5">EDIT PLAN</div>
+                            <div className="text-[#5B2E4F] text-center px-12 py-2 rounded-md border border-[#5B2E4F] text-[14px] font-[500px] leading-5">EDIT PLAN</div>
                         </Link>
                          
                         <Link to="/PlansWithdraw">
-                            <div className="text-[#5B2E4F] px-12 py-2 rounded-md border border-[#5B2E4F] text-[14px] font-[500px] leading-5">WITHDRAW</div>
+                            <div className="text-[#5B2E4F] text-center px-12 py-2 rounded-md border border-[#5B2E4F] text-[14px] font-[500px] leading-5">WITHDRAW</div>
                         </Link>
                          
                     </div> 
@@ -62,13 +61,20 @@ const MaturedSinglePlanPage = () => {
                       
                             <div className="border border-[#F4CDE0] rounded-xl p-4 mr-6 bg-[#FBEAEF]" style={{height: "122px",}} >
                                 <h className="text-[16px] font-[500px] leading-5 MediumFonter text-[#B4B5C1] ">Savings target</h>
-                                <div className="mt-2 flex flex-row justify-between">
+                                
+                                <div className="my-2 flex flex-row justify-between">
                                     
                                     <div className="text-[20px] font-[700px] leading-7 BoldFonter">N500,000.00</div>
                                     <div className="text-[14px] font-[400px] leading-5">100% reached</div>
                                     
                                 </div>
                                 
+                                
+                                <div className="relative pt-1">
+                                    <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-white">
+                                        <div style={{ width: "100%" }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#5B2E4F]"></div>
+                                    </div>
+                                </div>
                                
                                 
                             </div>

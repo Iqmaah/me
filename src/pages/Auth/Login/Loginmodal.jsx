@@ -16,7 +16,7 @@ const Loginmodal = () => {
         return(
             <div className="relative z-10 transition-opacity  border border-red-600" aria-labelledby="modal-title" role="dialog" aria-modal="true">
            
-                <div className="fixed z-10 inset-0 overflow-y-auto bg-opacity-75 bg-[#33343D] ">
+                <div className="fixed z-10 inset-0 overflow-y-auto  bg-opacity-75 bg-[#33343D] ">
                     <div className="flex items-end sm:items-center justify-center min-h-full p-4 sm:p-0">
                         <div className=" border-2 bg-white rounded-[2.5rem]  overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
                         <div className="relative bg-white rounded-3xl">
