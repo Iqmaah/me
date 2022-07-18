@@ -37,6 +37,9 @@ import Referral1 from "./pages/Referral/Referral1";
 import Transactions from "./pages/Transactions/Transactions";
 import Cards from "./pages/Cards/Cards";
 import Banks from "./pages/Banks/Banks";
+import Profile from "./pages/Profile/Profile";
+import NewInvestments from "./pages/Investments/NewInvestments";
+import NewInvestmentDetails from "./pages/Investments/NewInvestmentDetails";
 
 
 function App() {
@@ -79,6 +82,9 @@ function App() {
             <Route  path="/Transactions" element={<Transactions />} />
             <Route  path="/Cards" element={<Cards />} />
             <Route  path="/Banks" element={<Banks />} />
+            <Route  path="/Profile" element={<Profile />} />
+            <Route  path="/NewInvestments" element={<NewInvestments />} />
+            <Route  path="/NewInvestmentDetails" element={<NewInvestmentDetails />} />
            
             {/* <Route path="*" element={<HomePage />} /> */}
         </Routes>

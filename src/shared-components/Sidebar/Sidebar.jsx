@@ -113,7 +113,7 @@ const Sidebar = () => {
 
                                 <li>
                                     <div className="pb-5 text-gray-600 hover:text-[#5B2E4F] hover:bg-[#FDF6F8] py-2 pl-2 rounded">
-                                    <Link to="/Purse"> <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                    <Link to="/Profile"> <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                                             <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                                         </svg>
                                             <span className='ml-4'>Profile</span>
@@ -245,7 +245,7 @@ const Sidebar = () => {
 
                             <li>
                                 <div className="pb-5 text-gray-600 hover:text-[#5B2E4F] hover:bg-[#FDF6F8] py-2 pl-2 rounded">
-                                <Link to="/Purse"> <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <Link to="/Profile"> <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                                         <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                                     </svg>
                                         <span className='ml-4'>Profile</span>

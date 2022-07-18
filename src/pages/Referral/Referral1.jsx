@@ -31,8 +31,8 @@ const Referral1 = () => {
                                 <button className=" rounded-xl bg-[#5B2E4F] text-white py-2.5 px-4 text-center" onClick={() => setShowDiv(true)}>
                                     <p className="text-[14px] font-[500px] leading-5">SHARE REFERRAL LINK &nbsp;
                                         <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.166 4.84098L1.16602 4.84098" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M7.13281 0.824754L11.1661 4.84075L7.13281 8.85742" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M11.166 4.84098L1.16602 4.84098" stroke="white" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M7.13281 0.824754L11.1661 4.84075L7.13281 8.85742" stroke="white" strokeWidth="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </p>
                                 </button>

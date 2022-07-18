@@ -45,8 +45,8 @@ const HervestUser = () => {
                         <div className="pb-8">
                             <Link to="/SendMoney3">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.25 12.2739L19.25 12.2739" stroke="#626375" stroke-width="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                                    <path d="M10.2988 18.2985L4.24883 12.2745L10.2988 6.24951" stroke="#626375" stroke-width="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M4.25 12.2739L19.25 12.2739" stroke="#626375" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M10.2988 18.2985L4.24883 12.2745L10.2988 6.24951" stroke="#626375" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
                                 <span className="text-[16px] font-[300px] leading-6 text-[#626375]">Back</span>
                             </Link>

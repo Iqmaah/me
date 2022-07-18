@@ -35,6 +35,9 @@ import Referral1 from './pages/Referral/Referral1';
 import Transactions from './pages/Transactions/Transactions';
 import Cards from './pages/Cards/Cards';
 import Banks from './pages/Banks/Banks';
+import NewInvestmentDetails from './pages/Investments/NewInvestmentDetails';
+import NewInvestments from './pages/Investments/NewInvestments';
+import Profile from './pages/Profile/Profile';
 
 
 

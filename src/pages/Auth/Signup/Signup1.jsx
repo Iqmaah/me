@@ -56,8 +56,8 @@ const Signup1 = () => {
                                         <PrimaryFormField type="text" placeholder="Firstname" onChange={(e) => setFirstname(e.target.value)} value={firstname}  />
                                     </div><br />
                                     <div className='w-full md:w-1/2'>
-                                    <label htmlFor="lastname" className="sr-only">Othername</label>
-                                    <PrimaryFormField type="text" placeholder="Lastname" onChange={(e) => setLastname(e.target.value)} value={lastname} />
+                                        <label htmlFor="lastname" className="sr-only">Othername</label>
+                                        <PrimaryFormField type="text" placeholder="Lastname" onChange={(e) => setLastname(e.target.value)} value={lastname} />
                                     </div><br />
                                 </div><br/> 
                                 

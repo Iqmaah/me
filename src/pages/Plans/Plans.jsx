@@ -61,7 +61,7 @@ const Plans = () => {
 
                         <Link key={Plan.id} to="/SinglePlanPage" className= "grid grid-rows-2 gap-4 p-6 bg-white rounded-lg border border-gray-200 shadow-md ">
                             <div  className="flex flex-row space-x-4">
-                                <div className="bg-[#F4CDE0] rounded-full items-center p-4 ">
+                                <div className="bg-[#F4CDE0] rounded-full items-center p-4">
                                     <img src= {piggybank} alt="piggybank"/>
                                 </div> 
                                 <span><h2 className="pt-2 text-[16px] font-[400px] leading-8">{Plan.name}</h2></span>
