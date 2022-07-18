@@ -314,7 +314,7 @@ const Profile = () => {
                     </form>
                 
                     <div className="w-fit">
-                        <Link to="/Plans">
+                        <Link to="/Profile">
                             <Button text="SAVE CHANGES"></Button>
                         </Link>  
                     </div>
