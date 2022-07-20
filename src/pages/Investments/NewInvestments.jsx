@@ -29,10 +29,10 @@ const NewInvestments = () => {
         }
     ]
     return(
-        <div className="flex min-h-screen bg-slate-50 ">
+        <div className="flex min-h-screen bg-slate-50">
             <Sidebar/>
 
-            <div className="w-full">
+            <div className="">
                     <div className="mx-8 mt-8 mb-4 font-bold">
                         <h1 className="text-[32px] font-[700px] leading-8 ">Plans</h1>
                     </div>
@@ -54,7 +54,7 @@ const NewInvestments = () => {
                         <span className="text-[#5B2E4F] text-[14px] font-[400px] leading-5 ml-2"><Link to="/CreatePlan">Add new investment</Link></span>
                     </div>
 
-                    <div className="bg-white rounded-2xl m-8 px-12 py-8">
+                    <div className="bg-white rounded-2xl m-8 px-12 py-8 pb-72 w-full pr-12">
                         <div className="pb-8">
                             <Link to="/CreatePlan">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,10 +68,10 @@ const NewInvestments = () => {
                             Add new Investment
                         </div>
 
-                        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+                        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                             {
                                 Investments.map((Investment,i) =>
-                                    <Link to="/NewInvestmentDetails" key={Investment.id} className="grid grid-rows-2 gap-y-4 w-72 p-4 border border-[#F1F1F1] rounded-lg transition ease-in duration-300">  
+                                    <Link to="/NewInvestmentDetails" key={Investment.id} className="grid grid-rows-2 gap-y-4 p-4 border border-[#F1F1F1] rounded-lg transition ease-in duration-300">  
                                             <div className="flex flex-row space-x-4">
                                                 <img className="w-14 rounded-2xl" src={Investment.picture} alt="user" />
                                                 <div className="flex flex-col">

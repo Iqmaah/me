@@ -38,6 +38,9 @@ import Banks from './pages/Banks/Banks';
 import NewInvestmentDetails from './pages/Investments/NewInvestmentDetails';
 import NewInvestments from './pages/Investments/NewInvestments';
 import Profile from './pages/Profile/Profile';
+import NewInvestmentDetails2 from './pages/Investments/NewInvestmentDetails2';
+import NewInvestmentDetails3 from './pages/Investments/NewInvestmentDetails3';
+import Investments from './pages/Investments/Investments';
 
 
 
@@ -46,7 +49,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App/>
+      <Investments/>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -40,6 +40,9 @@ import Banks from "./pages/Banks/Banks";
 import Profile from "./pages/Profile/Profile";
 import NewInvestments from "./pages/Investments/NewInvestments";
 import NewInvestmentDetails from "./pages/Investments/NewInvestmentDetails";
+import NewInvestmentDetails2 from "./pages/Investments/NewInvestmentDetails2";
+import Investments from "./pages/Investments/Investments";
+import NewInvestmentDetails3 from "./pages/Investments/NewInvestmentDetails3";
 
 
 function App() {
@@ -83,8 +86,11 @@ function App() {
             <Route  path="/Cards" element={<Cards />} />
             <Route  path="/Banks" element={<Banks />} />
             <Route  path="/Profile" element={<Profile />} />
+            <Route  path="/Investments" element={<Investments />} />
             <Route  path="/NewInvestments" element={<NewInvestments />} />
             <Route  path="/NewInvestmentDetails" element={<NewInvestmentDetails />} />
+            <Route  path="/NewInvestmentDetails2" element={<NewInvestmentDetails2 />} />
+            <Route  path="/NewInvestmentDetails3" element={<NewInvestmentDetails3 />} />
            
             {/* <Route path="*" element={<HomePage />} /> */}
         </Routes>

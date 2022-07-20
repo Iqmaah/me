@@ -4,12 +4,12 @@ import piggybank from './../../assets/images/piggybank.png'
 import Plus from './../../assets/images/Plus.png'
 
 
-const Plans = () => {
+const Investments = () => {
 
-    const Plans = [
+    const Investments = [
         {
             "id" : "001",
-            "name": "Saving for rainy days",
+            "name": "Cocoa Farm",
             "amount": "N400,000"
           },
 
@@ -57,18 +57,18 @@ const Plans = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {
-                    Plans.map((Plan,i) => 
+                    Investments.map((Investment,i) => 
 
-                        <Link key={Plan.id} to="/SinglePlanPage" className= "grid grid-rows-2 gap-4 p-6 bg-white rounded-lg border border-gray-200 shadow-md ">
+                        <Link key={Investment.id} to="/SinglePlanPage" className= "grid grid-rows-2 gap-4 p-6 bg-white rounded-lg border border-gray-200 shadow-md ">
                             <div  className="flex flex-row space-x-4">
                                 <div className="bg-[#F4CDE0] rounded-full items-center p-4">
                                     <img src= {piggybank} alt="piggybank"/>
                                 </div> 
-                                <span><h2 className="pt-2 text-[16px] font-[400px] leading-8">{Plan.name}</h2></span>
+                                <span><h2 className="pt-2 text-[16px] font-[400px] leading-8">{Investment.name}</h2></span>
                             </div>
 
                             <div>
-                                <h2 className="BoldFonter pb-2 text-[20px] font-[700px] leading-8">{Plan.amount}</h2>
+                                <h2 className="BoldFonter pb-2 text-[20px] font-[700px] leading-8">{Investment.amount}</h2>
                                     
                                     <div className="w-full bg-gray-300 h-1">
                                         <div className="bg-[#5B2E4F] h-1" style={{width: "45%"}}></div>
@@ -81,7 +81,7 @@ const Plans = () => {
                 </div><br/>
 
                 <div className="grid grid-cols-1  lg:grid-cols-3 gap-4">
-                    <Link to="/CreatePlan">
+                    <Link to="/NewInvestmentDetails">
                         <div className= "grid grid-rows-2 gap-4 pt-5 pr-5 pl-5  bg-white rounded-lg border border-gray-200 shadow-md ">
                             <div className="flex flex-row space-x-4 pb-4">
                                 <div className="bg-[#F4CDE0] rounded-full items-center p-4 ">
@@ -89,7 +89,7 @@ const Plans = () => {
                                 </div>  
                             </div>
                             <div className='mb-4'>
-                                <h2 className="text-[#B4B5C1] BoldFonter text-[24px] font-[700px] leading-8">Create a new plan</h2>
+                                <h2 className="text-[#B4B5C1] BoldFonter text-[24px] font-[700px] leading-8">Add a new investment</h2>
                             </div>
                         </div> 
                     </Link>  
@@ -101,4 +101,4 @@ const Plans = () => {
     )
 } 
 
-export default Plans
+export default Investments
