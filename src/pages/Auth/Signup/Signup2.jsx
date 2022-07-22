@@ -8,7 +8,7 @@ const Signup2 = () => {
 
     
 
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     }
     
@@ -37,7 +37,7 @@ const Signup2 = () => {
                         
                         </div><br/>
                         
-                        <form onSubmit={onSubmit}>
+                        <form onSubmit={handleOnSubmit}>
                             
                             <div className="flex justify-center">
                                 <div className="mb-6 sm:w-72 ">

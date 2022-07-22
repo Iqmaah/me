@@ -11,7 +11,7 @@ const CreatePlan = () => {
     const [savingTarget, setsavingTarget] = useState("")
 
 
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     } 
 
@@ -40,7 +40,7 @@ const CreatePlan = () => {
                         <p className="text-[16px] font-[300px] leading-6 text-[#7C7F93] pt-4">Save with discipline towards a specific goal or target</p>
                     </div>
                     <div>
-                        <form onSubmit={onSubmit}>
+                        <form onSubmit={handleOnSubmit}>
                                 
                                 <div className="">
                                     <label htmlFor="Plan name" className="sr-only">Plan name </label>

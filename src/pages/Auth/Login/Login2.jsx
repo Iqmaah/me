@@ -10,7 +10,7 @@ const Login2 = () => {
     const [password, setPassword] = useState("")
 
 
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     }
 
@@ -37,7 +37,7 @@ const Login2 = () => {
                         
                         </div><br/>
                         
-                        <form onSubmit={onSubmit}>
+                        <form onSubmit={handleOnSubmit}>
                                 
                                 <div>
                                     <label htmlFor="password" className="sr-only">Password</label>

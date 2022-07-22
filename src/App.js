@@ -16,7 +16,6 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Plans from "./pages/Plans/Plans";
 import PlanSummary from "./pages/Plans/PlanSummary";
 import CreatePlan from "./pages/Plans/CreatePlan";
-import PaymentMethod from "./pages/Plans/PlanPaymentMethod";
 import SinglePlanPage from "./pages/Plans/SinglePlanPage";
 import TopUpPlanPage from "./pages/Plans/TopUpPlanPage";
 import PlansWithdraw from "./pages/Plans/PlansWithdraw";
@@ -30,7 +29,6 @@ import SendMoney2 from "./pages/FundPurse/TransferFromPurse/BankAccount/SendMone
 import SendMoney3 from "./pages/FundPurse/TransferFromPurse/HervestUser/SendMoney3";
 import HervestUser from "./pages/FundPurse/TransferFromPurse/HervestUser/HervestUser";
 import BankAccount from "./pages/FundPurse/TransferFromPurse/BankAccount/BankAccount";
-import SavingsHistory from "./shared-components/SavingsHistory";
 import SavingsPlan from "./pages/FundPurse/TransferFromPurse/SavingsPlan";
 import PursePaymentMethod from "./pages/FundPurse/PursePaymentMethod";
 import Referral1 from "./pages/Referral/Referral1";

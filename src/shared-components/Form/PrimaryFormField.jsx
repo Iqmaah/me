@@ -12,6 +12,7 @@ const PrimaryFormField = ({type, placeholder, onChange, value, ...props}) => {
             placeholder={placeholder || "Fill in the details"}
             onChange={onChange}
             {...props}
+            onSubmit={(e)=> e.preventDefault()}
         />
                     
     )

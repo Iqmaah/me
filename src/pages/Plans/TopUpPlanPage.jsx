@@ -11,7 +11,7 @@ const TopUpPlanPage = () => {
     
 
 
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     } 
 
@@ -47,7 +47,7 @@ const TopUpPlanPage = () => {
                         <p className="text-[16px] font-[300px] leading-6 text-[#7C7F93] pt-4">Add more to your savings plan</p>
                     </div>
                     <div>
-                        <form onSubmit={onSubmit}>
+                        <form onSubmit={handleOnSubmit}>
 
                                 <div className="flex justify-center">
                                     <div className="mb-6 sm:w-96">

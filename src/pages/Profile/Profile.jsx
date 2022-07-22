@@ -25,7 +25,7 @@ const Profile = () => {
     const [confirmNewPassword, setConfirmNewPassword] = useState("")
 
 
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     }
 
@@ -234,7 +234,7 @@ const Profile = () => {
                                                                 </Link>
                                                             </div>
 
-                                                            <form onSubmit={onSubmit}>
+                                                            <form onSubmit={handleOnSubmit}>
                                                                 <div>
                                                                     <label htmlFor="password" className="sr-only">Old password</label>
                                                                     <PrimaryFormField type="password" placeholder="Old password"  onChange={(e) => setOldPassword(e.target.value)} value={OldPassword}/>
@@ -258,7 +258,7 @@ const Profile = () => {
                                                                                                     <div className="p-28">
                                                                                                         <h1 className="text-center BoldFonter mb-8 px-4 text-[24px] font-[700px] leading-8" >Change password</h1>
                                                                                                         
-                                                                                                        <form onSubmit={onSubmit}>
+                                                                                                        <form onSubmit={handleOnSubmit}>
                                                                                                             <div>
                                                                                                                 <label htmlFor="password" className="sr-only">Enter new password</label>
                                                                                                                 <PrimaryFormField type="password" placeholder="Enter new password"  onChange={(e) => setnewPassword(e.target.value)} value={newPassword}/>

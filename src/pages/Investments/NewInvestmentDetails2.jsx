@@ -10,7 +10,7 @@ const NewInvestmentDetails2 =() => {
     const [number, setNumber] = useState("")
 
 
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     }
     return(
@@ -63,7 +63,7 @@ const NewInvestmentDetails2 =() => {
 
                         <div className=" p-4 mr-8 mb-40">
                            
-                            <form onSubmit={onSubmit}>
+                            <form onSubmit={handleOnSubmit}>
                                 <div>
                                     <label htmlFor="number" className="sr-only">How many women would you like to fund? </label>
                                     <PrimaryFormField type="number" placeholder="How many women would you like to fund?"  onChange={(e) => setNumber(e.target.value)} value={number} />

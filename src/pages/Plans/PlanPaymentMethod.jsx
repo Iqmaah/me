@@ -16,7 +16,7 @@ const PlanPaymentMethod =  () => {
     const [cardNumber, setCardNumber] = useState("")
 
 
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     }
 

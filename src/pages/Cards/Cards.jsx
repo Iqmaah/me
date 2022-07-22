@@ -14,7 +14,7 @@ const Cards = () => {
     const [cardNumber, setCardNumber] = useState("")
 
 
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     }
 
@@ -87,7 +87,7 @@ const Cards = () => {
                                                                 </Link>
                                                             </div>
 
-                                                            <form onSubmit={onSubmit}>
+                                                            <form onSubmit={handleOnSubmit}>
                                                                 <div>
                                                                     <label htmlFor="Card number" className="sr-only">Card number</label>
                                                                     <PrimaryFormField type="number" placeholder="Card number" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" onChange={(e) => setCardNumber(e.target.value)} value={cardNumber}/>

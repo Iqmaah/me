@@ -4,14 +4,28 @@ import HerVest from './../../../assets/images/hervest.png'
 import LoginImg from './../../../assets/images/Login1.png'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField.jsx'
 import Button from '../../../shared-components/Form/Button'
+import {Login} from "../../../services/network/api"
 
 const Login1 = () => {
    
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const loginData = {
+        email,
+        password
+    }
 
-    async function onSubmit(e) {
+    const onLogin= async() => {
+        const response = await Login.login(loginData)
+        console.log('message', response.data.message)
+    }
+
+    const handleLogin = () => {
+        onLogin()
+    }
+
+    function handleOnSubmit(e) {
         e.preventDefault()
     }
 
@@ -35,7 +49,7 @@ const Login1 = () => {
                         
                         </div>
                         
-                        <form onSubmit={onSubmit}>
+                        <form onSubmit={handleOnSubmit}>
                                 <div>
                                     <label htmlFor="email" className="sr-only">Email </label>
                                     <PrimaryFormField type="email" placeholder="Email"  onChange={(e) => setEmail(e.target.value)} value={email} />
@@ -48,7 +62,7 @@ const Login1 = () => {
                                 <Link to="/PasswordReset1"><p className='text-[#5B2E4F] BoldFonter mb-14 text-[14px] font-[400px] leading-4'>Forgot password?</p></Link>
                                 <div> 
                                     <Link to="/Dashboard">
-                                        <Button text="LOG IN" />
+                                        <Button text="LOG IN" onClick={handleLogin} />
                                     </Link>
                                 </div><br/>
                                 <div className='flex flex-row justify-center'>

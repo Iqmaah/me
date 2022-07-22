@@ -81,7 +81,7 @@ const Investments = () => {
                 </div><br/>
 
                 <div className="grid grid-cols-1  lg:grid-cols-3 gap-4">
-                    <Link to="/NewInvestmentDetails">
+                    <Link to="/NewInvestments">
                         <div className= "grid grid-rows-2 gap-4 pt-5 pr-5 pl-5  bg-white rounded-lg border border-gray-200 shadow-md ">
                             <div className="flex flex-row space-x-4 pb-4">
                                 <div className="bg-[#F4CDE0] rounded-full items-center p-4 ">

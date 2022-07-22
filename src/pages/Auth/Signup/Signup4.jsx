@@ -27,7 +27,7 @@ const Signup4 = () => {
 
                         <div> 
                             <Link to="/Login1">
-                                <Button text="LOG IN" />
+                                <Button text="LOG IN" onClick={()=> localStorage.clear()}/>
                             </Link>
                             
                         </div>

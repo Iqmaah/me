@@ -14,7 +14,7 @@ const Banks = () => {
     const [cardNumber, setCardNumber] = useState("")
 
 
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     }
 
@@ -91,7 +91,7 @@ const Banks = () => {
                                                                 </Link>
                                                             </div>
 
-                                                            <form onSubmit={onSubmit}>
+                                                            <form onSubmit={handleOnSubmit}>
                                                                 <div className="flex justify-center">
                                                                     <div className="mb-6 sm:w-72 ">
                                                                         <Dropdown placeholder="Work station" valueArr={["1","2", "tayo","4"]}></Dropdown>

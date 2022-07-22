@@ -8,10 +8,10 @@ import Button from "../../../../shared-components/Form/Button"
 const HervestUser = () => { 
 
     const [AccountNumber, setAccountNumber] = useState("")
-    const [savingTarget, setsavingTarget] = useState("")
+    
 
 
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     } 
 
@@ -60,7 +60,7 @@ const HervestUser = () => {
                             </div>
 
                             <div>
-                                <form onSubmit={onSubmit}>
+                                <form onSubmit={handleOnSubmit}>
                                 
                                     <div className="">
                                         <label htmlFor="Account Number" className="sr-only">Account Number </label>

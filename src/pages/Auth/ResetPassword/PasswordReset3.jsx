@@ -9,7 +9,7 @@ const PasswordReset3 = () => {
     const [password, setPassword] = useState("")
 
 
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     }
 
@@ -33,7 +33,7 @@ const PasswordReset3 = () => {
                         
                         </div>
                         
-                        <form onSubmit={onSubmit} className="text-center">
+                        <form onSubmit={handleOnSubmit} className="text-center">
                                 <div>
                                     <label htmlFor="email" className="sr-only">Email </label>
                                     <PrimaryFormField type="email" placeholder="Email"  onChange={(e) => setEmail(e.target.value)} value={email} />

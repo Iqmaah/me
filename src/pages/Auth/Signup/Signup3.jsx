@@ -12,7 +12,7 @@ const Signup3 = () => {
 
     const [color, setColor] = useState("")
 
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     }
     
@@ -41,7 +41,7 @@ const Signup3 = () => {
                         
                         </div><br/>
                         
-                        <form onSubmit={onSubmit}>
+                        <form onSubmit={handleOnSubmit}>
                             
                             <div className="flex flex-wrap justify-center">
                                 <div className="mb-6 sm:w-96">

@@ -12,7 +12,7 @@ const FundPurse =  () => {
     const [amount, setAmount] = useState("")
 
 
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     }
 
@@ -52,7 +52,7 @@ const FundPurse =  () => {
                             </div>
 
                             <div>
-                                <form onSubmit={onSubmit}>
+                                <form onSubmit={handleOnSubmit}>
                                         <div className="">
                                             <label htmlFor="amount" className="sr-only">Enter amount</label>
                                             <PrimaryFormField type="number" placeholder="Enter amount"  onChange={(e) => setAmount(e.target.value)} value={amount} />

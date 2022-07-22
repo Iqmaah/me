@@ -6,7 +6,7 @@ import arrow from "../../../assets/images/arrow1.png"
 
 const SendMoney1 =  () => {
     
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     }
 

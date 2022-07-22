@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from "react-router-dom"
 import SignupImg from '../../../assets/images/Signup.png'
 import HerVest from '../../../assets/images/hervest.png'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField.jsx'
 import Button from '../../../shared-components/Form/Button'
+import { SignUp } from '../../../services/network/api'
 
 
 const Signup1 = () => {
@@ -15,13 +16,45 @@ const Signup1 = () => {
     const [password, setPassword] = useState("")
 
 
-    async function onSubmit(e) {
+    const signUpData = {
+        firstname,
+        lastname,
+        email,
+        phone,
+        password
+    }
+    const onSignUp = async () =>{
+        const response = await SignUp.signup(signUpData)
+        console.log('message', response.data.message)
+    
+    }
+
+    const handleClick = () =>{
+        localStorage.setItem('firstname', firstname)
+        localStorage.setItem('lastname', lastname)
+        localStorage.setItem('email', email)
+        localStorage.setItem('phone', phone)
+        onSignUp()
+    }
+
+    function handleOnSubmit(e) {
         e.preventDefault()
+    }
+
+    // const onLoadPage= () =>{
+    //     document.getElementById('signUp').onload = onGetItems()
+
+    // }
+    const onGetItems = () => {
+        setFirstname(localStorage.getItem('firstname'))
+        setLastname(localStorage.getItem('lastname'))
+        setEmail(localStorage.getItem('email'))
+        setPhone(localStorage.getItem('phone'))
     }
     
 
     return(
-        <div className=' bg-slate-100 grid sm:grid-rows-1 md:grid-cols-2  h-screen items-center '>
+        <div className=' bg-slate-100 grid sm:grid-rows-1 md:grid-cols-2  h-screen items-center' onLoad={onGetItems}>
 
             
       
@@ -48,7 +81,7 @@ const Signup1 = () => {
                         
                         </div>
                         
-                        <form onSubmit={onSubmit}>
+                        <form onSubmit={handleOnSubmit}>
                             
                                 <div className='flex flex-wrap'>
                                     <div className='mb-6 md:mb-0 w-full md:w-1/2 md:pr-3'>
@@ -75,7 +108,7 @@ const Signup1 = () => {
                                 </div><br />
                                 <div>
                                     <Link to="/Signup2">
-                                        <Button text="NEXT"></Button>
+                                        <Button text="NEXT" onClick={handleClick}></Button>
                                     </Link>  
                                 </div>
                         </form>

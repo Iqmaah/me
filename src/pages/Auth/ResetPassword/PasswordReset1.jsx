@@ -2,12 +2,26 @@ import { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField.jsx'
 import Button from '../../../shared-components/Form/Button.jsx'
+import { ResetPassword } from '../../../services/network/api.js'
 
 const PasswordReset1 = () => {
 
     const [email, setEmail] = useState("")
 
-    async function onSubmit(e) {
+    const resetPasswordData = {
+        email
+    }
+
+    const onPasswordReset= async() => {
+        const response = await ResetPassword.resetPassword(resetPasswordData)
+        console.log('message', response.data.message)
+    }
+
+    const handleResetPassword = () => {
+        onPasswordReset()
+    }
+
+    function handleOnSubmit(e) {
         e.preventDefault()
     }
 
@@ -29,7 +43,7 @@ const PasswordReset1 = () => {
                         
                         </div>
                         
-                        <form onSubmit={onSubmit}>
+                        <form onSubmit={handleOnSubmit}>
                                 <div>
                                     <label htmlFor="email" className="sr-only">Email </label>
                                     <PrimaryFormField type="email" placeholder="Email"  onChange={(e) => setEmail(e.target.value)} value={email} />
@@ -38,7 +52,7 @@ const PasswordReset1 = () => {
                                 <p className='text-[#5B2E4F] font-bold mb-14' style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "14px", lineHeight: "18px"}}>Forgot password?</p>
                                 <div>
                                     <Link to="/PasswordReset2" className='text-[#5B2E4F]'>
-                                        <Button text="SEND RESET LINK" />
+                                        <Button text="SEND RESET LINK"  onClick={onPasswordReset}/>
                                     </Link> 
                                 
                                 </div><br/>

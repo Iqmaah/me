@@ -9,7 +9,7 @@ const PlansWithdraw = () => {
     
 
 
-    async function onSubmit(e) {
+    function handleOnSubmit(e) {
         e.preventDefault()
     } 
 
@@ -45,7 +45,7 @@ const PlansWithdraw = () => {
                         <p className="text-[16px] font-[300px] leading-6 text-[#7C7F93] pt-4">You can either withdraw your money into your bank account or your purse.</p>
                     </div>
                     <div>
-                        <form onSubmit={onSubmit}>
+                        <form onSubmit={handleOnSubmit}>
                                 <div className="">
                                     <label htmlFor="amount" className="sr-only">How much will you like to withdraw?</label>
                                     <PrimaryFormField type="number" placeholder="How much will you like to withdraw?"  onChange={(e) => setAmount(e.target.value)} value={amount} />
