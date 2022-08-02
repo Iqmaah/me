@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Signup1 from './pages/Auth/Signup/Signup1';
-import Signup2 from './pages/Auth/Signup/Signup2';
+import Signup2 from './pages/Auth/Signup/OtpVerification';
 import Signup3 from './pages/Auth/Signup/Signup3';
 import Signup4 from './pages/Auth/Signup/Signup4';
 import Login1 from './pages/Auth/Login/Login1';
@@ -41,6 +41,8 @@ import Profile from './pages/Profile/Profile';
 import NewInvestmentDetails2 from './pages/Investments/NewInvestmentDetails2';
 import NewInvestmentDetails3 from './pages/Investments/NewInvestmentDetails3';
 import Investments from './pages/Investments/Investments';
+import OtpVerification from './pages/Auth/Signup/OtpVerification';
+import Welcome from './pages/Auth/Signup/Welcome';
 
 
 

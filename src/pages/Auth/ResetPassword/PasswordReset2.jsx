@@ -1,34 +1,126 @@
-import {Link} from 'react-router-dom'
-import mailImg from './../../../assets/images/resetmail.png'
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import SignupImg from '../../../assets/images/Signup.svg'
+import HerVest from '../../../assets/images/hervest.svg'
+import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField'
+import Button from '../../../shared-components/Form/Button'
+import { ChangePassword } from '../../../services/api'
+import lock from '../../../assets/images/lock.svg'
+import { FaEye, FaEyeSlash, FaMailBulk, FaBlenderPhone } from "react-icons/fa";
+import RegLoginInputs from '../../../shared-components/Form/RegLoginInputs.jsx'
+import toast from 'react-hot-toast'
+
+// import { ResetPassword } from '../../../services/api'
 
 const PasswordReset2 = () => {
-    return(
-        <div className='bg-slate-100 grid sm:grid-rows-1 md:grid-cols-2  h-screen items-center '>
-            <div className="min-h-full hidden md:block lg:px-8 ">
 
+    const [code, setCode] = useState("")
+    const [newPassword, setnewPassword] = useState("")
+    const [confirmNewPassword, setConfirmNewPassword] = useState("")
+    const [passwordShown, SetpasswordShown] = useState("")
+
+    const navigate = useNavigate()
+
+    const changePasswordData = {
+        code,
+        password: confirmNewPassword
+    }
+
+    const onChangePassword = async () => {
+        try {
+            if (newPassword === confirmNewPassword){
+                const response = await ChangePassword.changePassword(changePasswordData)
+                console.log('message', response.data.message)
+                navigate('/Login1')
+            }
+        } catch (error) {
+            console.log(error);
+            toast(error.response.data.message)
+        }
+        
+    }
+
+    function handleOnSubmit(e) {
+        e.preventDefault()
+    }
+
+    return (
+        <div className='bg-slate-100 grid sm:grid-rows-1 md:grid-cols-2  h-screen items-center '>
+            <div className="min-h-full hidden md:block py-8 px-12 lg:px-8 ">
+                <div className="hidden md:block mt-2">
+                    <img src={HerVest} alt="HerVest logo" className='sm:hidden md:block'></img>
+                </div><br />
+                <div className="hidden md:block mt-16 mx-20 flex justify-center">
+                    <img src={SignupImg} alt="Signup today" className='' />
+                </div>
             </div>
             <div className="relative border border-white-100 rounded-2xl bg-white my-8 mx-8 flex items-center justify-center py-6">
-                    <div className="py-20 px-12 lg:px-16 rounded-2xl max-w-md w-full space-y-8">
-                        
-                        <div className='absolute right-5 top-2' >
-                                <Link to='/PasswordReset3'>
-                                    <button type="button" className="text-gray-400 bg-[#5B2E4F]  hover:bg-[#5B2E4F] hover:text-gray-900 rounded-lg text-sm p-1 mr-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="authentication-modal">
-                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>  
-                                    </button>
-                                </Link>
+                <div className="py-16 px-16 lg:px-28 w-full space-y-2">
+
+                    <div className=''>
+
+                        <h1 className='font-bold BoldFonter text-[32px] font-[700px] leading-10 mb-2'> Reset Password </h1>
+                        <p className='text-gray-500 m text-[16px] font-[400px] leading-6'>Enter the code sent your email to reset your password .</p>
+
+                    </div>
+
+                    <form onSubmit={handleOnSubmit}>
+                        <div>
+                            <label htmlFor="enter code" className="text-[13px] font-[500px] leading-5 ">Enter code </label>
+
+                            <PrimaryFormField type="text" placeholder="**********" onChange={(e) => setCode(e.target.value)} value={code} />
+                        </div><br />
+
+                            <p className='text-gray-500  text-[16px] font-[400px] leading-6 mb-2'>Kindly enter and set up a new password for your account.</p>
+
+                        <div className='relative'>
+                            <label htmlFor="password" className="text-[13px] font-[500px] leading-5">Enter new password</label>
+
+                            <RegLoginInputs icon={lock} type={passwordShown ? "text" : "password"} placeholder="Enter new password" onChange={(e) => setnewPassword(e.target.value)} value={newPassword} />
+                            <div className="absolute inset-y-0 right-0 mt-6 pr-3 flex items-center text-sm leading-5">
+                                {passwordShown ? (
+                                    <FaEye
+                                        onClick={() => SetpasswordShown(false)}
+                                        className="text-right"
+                                    />
+                                ) : (
+                                    <FaEyeSlash
+                                        onClick={() => SetpasswordShown(true)}
+                                        className="text-right"
+                                    />
+                                )}
+                            </div>
+                        </div><br />
+                        <div className="relative">
+                            <label htmlFor="confirm-old-password" className="text-[13px] font-[500px] leading-5">Confirm new password</label>
+
+                            <RegLoginInputs icon={lock} type={passwordShown ? "text" : "password"} placeholder="Confirm new password" onChange={(e) => setConfirmNewPassword(e.target.value)} value={confirmNewPassword} />
+                            <div className="absolute inset-y-0 right-0 mt-6 pr-3 flex items-center text-sm leading-5">
+                                {passwordShown ? (
+                                    <FaEye
+                                        onClick={() => SetpasswordShown(false)}
+                                        className="text-right"
+                                    />
+                                ) : (
+                                    <FaEyeSlash
+                                        onClick={() => SetpasswordShown(true)}
+                                        className="text-right"
+                                    />
+                                )}
+                            </div>
+                        </div><br />
+
+                        <div className='mt-4 text-[#5B2E4F]'>
+                                <Button text="VERIFY" onClick={() => {onChangePassword()}}/>
+                        </div><br />
+
+                        <div className="text-center">
+                            <span className="text-[14px] font-[400px] leading-5">Didn't get a code,</span>
+                            <span className="text-[14px] font-[400px] text-[#5B2E4F] MediumFonter leading-5">Resend</span>
                         </div>
-                        <div className='flex justify-center text-center'>
-                            <img src={mailImg}></img>
-                        </div>
-                        <div className=''><br/>
-                          
-                            <h1 className='text-center BoldFonter text-[32px] font-[700px] leading-10'> Reset link has been sent </h1>
-                            <p className='text-gray-500 text-center text-[16px] font-[400px] leading-6'>A password reset mail was sent to you. Please check your mail to verify your account.</p>
-                        
-                        </div>
-                        
-                        
-                    </div>      
+
+                    </form>
+                </div>
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import HerVest from './../../../assets/images/hervest.png'
-import LoginImg from './../../../assets/images/Login2.png'
+import HerVest from './../../../assets/images/hervest.svg'
+import LoginImg from './../../../assets/images/Login2.svg'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField.jsx'
 import Button from '../../../shared-components/Form/Button'
 
@@ -30,7 +30,7 @@ const Login2 = () => {
                             <p className='text-gray-400 text-[16px] font-[300px] leading-5'>New user?</p>&nbsp;
                             <p className='text-[#5B2E4F] BoldFonter text-[16px] font-[300px] leading-5'><Link to="/" className='text-[#5B2E4F]'>Create new account</Link></p>
                         </div>
-                        <div className='pt-8'><br/>
+                        <div className='pt-8'>
                           
                             <h1 className='font-bold BoldFonter text-[32px] font-[700px] leading-10'> Hello, Aminat </h1>
                             <p className='text-gray-500 text-[16px] font-[400px] leading-6'>Feels good to have you back</p>

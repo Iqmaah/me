@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import SignupImg from '../../../assets/images/Signup4.png'
+import SignupImg from '../../../assets/images/Signup.svg'
 import HerVest from '../../../assets/images/hervest.png'
 import Button from '../../../shared-components/Form/Button'
 
@@ -9,10 +9,10 @@ const Signup4 = () => {
             <div className='bg-slate-100 grid sm:grid-rows-1 md:grid-cols-2  h-screen items-center '>
 
                 <div className="min-h-full sm:hidden md:block  py-8 px-12 lg:px-8 ">
-                    <div className="hidden md:block mt-2">
+                    <div className="hidden md:block ">
                         <img src={HerVest} alt="HerVest logo" className='hidden md:block'></img>    
                     </div><br/>
-                    <div className="hidden md:block mt-16 mx-20 flex justify-center items-center ">
+                    <div className="hidden md:block flex justify-center items-center ">
                         <img src={SignupImg} alt="Signup today" className='sm:hidden md:block' />
                     </div>              
                 </div>
@@ -26,7 +26,7 @@ const Signup4 = () => {
                         </div><br/><br/>
 
                         <div> 
-                            <Link to="/Login1">
+                            <Link to="/Welcome">
                                 <Button text="LOG IN" onClick={()=> localStorage.clear()}/>
                             </Link>
                             

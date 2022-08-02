@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import { Link } from "react-router-dom"
-import SignupImg from '../../../assets/images/Signup3.png'
-import HerVest from '../../../assets/images/hervest.png'
+import SignupImg from '../../../assets/images/Signup.svg'
+import HerVest from '../../../assets/images/hervest.svg'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField'
 import Button from '../../../shared-components/Form/Button'
 import Dropdown from '../../../shared-components/Form/Dropdown'
@@ -21,10 +21,10 @@ const Signup3 = () => {
         <div className='bg-slate-100 grid sm:grid-rows-1 md:grid-cols-2  h-screen items-center '>
 
                 <div className="min-h-full hidden md:block py-8 px-12 lg:px-8 ">
-                    <div className='hidden md:block mt-2'>
+                    <div className='hidden md:block '>
                         <img src={HerVest} alt="HerVest logo" className='hidden md:block'></img><br/>
                     </div>
-                    <div className="hidden md:block mt-16 mx-20 flex justify-center items-center">
+                    <div className="hidden md:block flex justify-center items-center">
                         <img src={SignupImg} alt="Signup today" className='sm:hidden md:block' />
                     </div>              
                 </div>

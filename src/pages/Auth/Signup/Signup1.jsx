@@ -1,11 +1,20 @@
 import { useEffect, useState } from 'react'
-import { Link } from "react-router-dom"
-import SignupImg from '../../../assets/images/Signup.png'
-import HerVest from '../../../assets/images/hervest.png'
+import { Link, useNavigate } from "react-router-dom"
+import SignupImg from '../../../assets/images/Signup.svg'
+import HerVest from '../../../assets/images/hervest.svg'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField.jsx'
 import Button from '../../../shared-components/Form/Button'
-import { SignUp } from '../../../services/network/api'
-
+import user from '../../../assets/images/user.svg'
+import mail from '../../../assets/images/mail.svg'
+import lock from '../../../assets/images/lock.svg'
+import Phone from '../../../assets/images/phone.svg'
+import { SignUp } from '../../../services/api'
+import eye from '../../../assets/images/Eye.png'
+import google from '../../../assets/images/google.png'
+import facebook from '../../../assets/images/facebook.png'
+import { FaEye, FaEyeSlash, FaMailBulk, FaBlenderPhone } from "react-icons/fa";
+import RegLoginInputs from '../../../shared-components/Form/RegLoginInputs'
+import toast from 'react-hot-toast'
 
 const Signup1 = () => {
 
@@ -14,22 +23,30 @@ const Signup1 = () => {
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
     const [password, setPassword] = useState("")
+    const [passwordShown, SetpasswordShown] = useState("")
 
+    const navigate= useNavigate()
 
     const signUpData = {
         firstname,
         lastname,
         email,
-        phone,
+        phone, 
         password
     }
-    const onSignUp = async () =>{
-        const response = await SignUp.signup(signUpData)
-        console.log('message', response.data.message)
-    
+    const onSignUp = async () => {
+        try {
+            const response = await SignUp.signUp(signUpData)
+            console.log('message', response.data.message)
+            navigate('/OtpVerification')
+        } catch (error) {
+            console.log(error);
+            toast(error.response.data.message)
+        }
+
     }
 
-    const handleClick = () =>{
+    const handleClick = () => {
         localStorage.setItem('firstname', firstname)
         localStorage.setItem('lastname', lastname)
         localStorage.setItem('email', email)
@@ -51,70 +68,115 @@ const Signup1 = () => {
         setEmail(localStorage.getItem('email'))
         setPhone(localStorage.getItem('phone'))
     }
-    
 
-    return(
+
+    return (
         <div className=' bg-slate-100 grid sm:grid-rows-1 md:grid-cols-2  h-screen items-center' onLoad={onGetItems}>
 
-            
-      
-
             <div className="min-h-full hidden md:block py-8 px-12 lg:px-8 ">
-                    <div className="hidden md:block mt-2">
-                        <img src={HerVest} alt="HerVest logo" className='sm:hidden md:block'></img>    
-                    </div><br/>
-                    <div className="hidden md:block mt-16 mx-20 flex justify-center">
-                        <img src={SignupImg} alt="Signup today" className='' />
-                    </div>              
+                <div className="hidden md:block ">
+                    <img src={HerVest} alt="HerVest logo" className='sm:hidden md:block'></img>
+                </div><br />
+                <div className="hidden md:block flex justify-center">
+                    <img src={SignupImg} alt="Signup today" className='' />
+                </div>
             </div>
 
-            <div className="relative border border-white-100 bg-white lg:mx-8 lg:my-12 rounded-2xl flex items-center py-8 ">
-                
-                <div className="px-20 md:px-32 w-full space-y-8">
-                        <div className='absolute top-5 right-5'>
-                            <p className='text-gray-800 text-[16px] font-[500px] leading-4'>Already own an account? <Link to="/Login1" className='text-[#5B2E4F] MediumFonter'>Log in</Link></p>
-                        </div>
-                        <div className='pt-4'><br/>
-                          
-                            <h1 className='BoldFonter text-[32px] font-[700px] leading-10'> Create an account </h1>
-                            <p className='text-gray-400 text-[16px] font-[400px] leading-6'> Hey smart woman, get started by creating an account on HerVest</p>
-                        
-                        </div>
-                        
-                        <form onSubmit={handleOnSubmit}>
-                            
-                                <div className='flex flex-wrap'>
-                                    <div className='mb-6 md:mb-0 w-full md:w-1/2 md:pr-3'>
-                                        <label htmlFor="firstname" className="sr-only">Firstname</label>
-                                        <PrimaryFormField type="text" placeholder="Firstname" onChange={(e) => setFirstname(e.target.value)} value={firstname}  />
-                                    </div><br />
-                                    <div className='w-full md:w-1/2'>
-                                        <label htmlFor="lastname" className="sr-only">Othername</label>
-                                        <PrimaryFormField type="text" placeholder="Lastname" onChange={(e) => setLastname(e.target.value)} value={lastname} />
-                                    </div><br />
-                                </div><br/> 
+            <div className="relative overflow-auto border border-white-100 bg-white lg:mx-8 lg:my-12 rounded-2xl flex items-center py-8 ">
+
+                <div className="px-20 md:px-24 w-full space-y-4">
+                    <div className='absolute right-5 top-3'>
+                        <p className='text-gray-800 text-[16px] font-[500px] leading-4'>Already own an account? <Link to="/Login1" className='text-[#5B2E4F] MediumFonter'>Log in</Link></p>
+                    </div>
+                    <div className=''>
+
+                        <h1 className='BoldFonter text-[32px] font-[700px] leading-10'> Create an account </h1>
+                        <p className='text-gray-400 text-[16px] font-[400px] leading-6'> Hey there, let’s get to meet you!</p>
+
+                    </div>
+
+                    <form onSubmit={handleOnSubmit}>
+
+
+                        <div className='flex flex-wrap'>
+                            <div className='w-full md:w-1/2 mb-2 md:pr-2'>
+                                <label htmlFor="firstname" className="text-[13px] font-[500px] leading-5">First Name</label>
+                                {/* <span >
+                                    <img src={user} className="mt-3 ml-3 absolute z-10 h-5 w-5 "
+                                        aria-hidden="true"></img>
+                                </span> */}
+                                <RegLoginInputs icon={user} type="text" id="firstname" required placeholder="Firstname" onChange={(e) => setFirstname(e.target.value)} value={firstname} />
+                            </div>
+
+                            <div className='w-full md:w-1/2 mb-2  md:pl-2'>
+                                <label htmlFor="lastname" className="text-[13px] font-[500px] leading-5">Last Name</label>
                                 
+                                <RegLoginInputs icon={user} type="text" placeholder="Lastname" onChange={(e) => setLastname(e.target.value)} value={lastname} />
+                            </div>
+                        </div>
+
+                        <div className='mb-2'>
+                            <label htmlFor="email" className="text-[13px] font-[500px] leading-5">Email </label>
+
+                            <RegLoginInputs icon={mail} type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} />
+                        </div>
+
+                        <div className='mb-2'>
+                            <label htmlFor="phone" className="text-[13px] font-[500px] leading-5">Phone Number </label>
+
+                            <RegLoginInputs icon={Phone} type="number" placeholder="Phone Number" onChange={(e) => setPhone(e.target.value)} value={phone} />
+                        </div>
+
+                        <div className='relative mb-6'>
+                            <label htmlFor="password" className="text-[13px] font-[500px] leading-5">Password</label>
+                            <RegLoginInputs icon={lock}  type={passwordShown ? "text" : "password"} placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} />
+
+                            <div className="absolute inset-y-0 right-0 mt-5 pr-3 flex items-center text-sm leading-5">
+                                {passwordShown ? (
+                                    <FaEye
+                                        onClick={() => SetpasswordShown(false)}
+                                        className="text-right"
+                                    />
+                                ) : (
+                                    <FaEyeSlash
+                                        onClick={() => SetpasswordShown(true)}
+                                        className="text-right"
+                                    />
+                                )}
+                            </div>
+                        </div>
+
+
+                        <div>
+                            {/* <Link to="/OtpVerification"> */}
+                                <Button text="NEXT" onClick={() => handleClick}></Button>
+                            {/* </Link> */}
+                        </div>
+                    </form>
+                    <div class="flex items-center pt-4">
+                        {/* <!-- The left line --> */}
+                        <div className="flex-grow h-px bg-[#5B2E4F]"></div>
+
+                        {/* <!-- Your text here --> */}
+                        <span className="flex-shrink px-4 text-[13px] font-[500px] leading-5 MediumFonter">or sign up with</span>
+
+                        {/* <!-- The right line --> */}
+                        <div className="flex-grow h-px bg-[#5B2E4F]"></div>
+                    </div>
+
+                    <div className='flex space-x-4 justify-center'>
                                 <div>
-                                    <label htmlFor="email" className="sr-only">Email </label>
-                                    <PrimaryFormField type="email" placeholder="Email"  onChange={(e) => setEmail(e.target.value)} value={email}/>
-                                </div><br />
-                                <div>
-                                <label htmlFor="phone" className="sr-only">Phone</label>
-                                    <PrimaryFormField type="text" placeholder="Phone number"  onChange={(e) => setPhone(e.target.value)} value={phone}  />
-                                </div><br />
-                                <div>
-                                    <label htmlFor="password" className="sr-only">Password</label>
-                                    <PrimaryFormField type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)} value={password} />
-                                </div><br />
-                                <div>
-                                    <Link to="/Signup2">
-                                        <Button text="NEXT" onClick={handleClick}></Button>
-                                    </Link>  
+                                    <img src={google} className="h-11 w-11"></img>
                                 </div>
-                        </form>
-                </div>       
+                                <div>
+                                    <img src={facebook} className="h-11 w-11"></img>
+                                </div>
+                        </div>
+
+
+                </div>
             </div>
- 
+
 
         </div>
     )
