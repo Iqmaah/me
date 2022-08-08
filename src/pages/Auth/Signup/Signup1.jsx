@@ -8,50 +8,65 @@ import user from '../../../assets/images/user.svg'
 import mail from '../../../assets/images/mail.svg'
 import lock from '../../../assets/images/lock.svg'
 import Phone from '../../../assets/images/phone.svg'
-import { SignUp } from '../../../services/api'
+//import { signUp } from '../../../services/api'
 import eye from '../../../assets/images/Eye.png'
 import google from '../../../assets/images/google.png'
 import facebook from '../../../assets/images/facebook.png'
 import { FaEye, FaEyeSlash, FaMailBulk, FaBlenderPhone } from "react-icons/fa";
 import RegLoginInputs from '../../../shared-components/Form/RegLoginInputs'
 import toast from 'react-hot-toast'
+import { POSTwithoutTOKEN } from '../../../services/network/users'
+
 
 const Signup1 = () => {
 
-    const [firstname, setFirstname] = useState("")
-    const [lastname, setLastname] = useState("")
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
-    const [phone, setPhone] = useState("")
+    const [phoneNumber, setPhoneNumber] = useState("")
     const [password, setPassword] = useState("")
     const [passwordShown, SetpasswordShown] = useState("")
 
     const navigate= useNavigate()
 
     const signUpData = {
-        firstname,
-        lastname,
+        firstName,
+        lastName,
         email,
-        phone, 
+        phoneNumber, 
         password
     }
-    const onSignUp = async () => {
+    // const onSignUp = async () => {
+    //     console.log("i clicked");
+    //     try {
+    //         const response = await signUp(signUpData)
+    //         console.log('message', response)
+    //         navigate('/OtpVerification')
+    //     } catch (error) {
+    //         console.log(error);
+    //         toast(error.response)
+    //     }
+
+    // }
+
+    const handleClick = async () => {
         try {
-            const response = await SignUp.signUp(signUpData)
-            console.log('message', response.data.message)
-            navigate('/OtpVerification')
+         console.log('ENtered Handle click');
+    const res = await POSTwithoutTOKEN('account/register', signUpData)
+        console.log(res);
+        console.log(signUpData);
+        navigate('/OtpVerification')   
         } catch (error) {
             console.log(error);
             toast(error.response.data.message)
         }
-
-    }
-
-    const handleClick = () => {
-        localStorage.setItem('firstname', firstname)
-        localStorage.setItem('lastname', lastname)
-        localStorage.setItem('email', email)
-        localStorage.setItem('phone', phone)
-        onSignUp()
+        
+        // console.log("i entered handleclick");
+        // localStorage.setItem('firstname', firstname)
+        // localStorage.setItem('lastname', lastname)
+        // localStorage.setItem('email', email)
+        // localStorage.setItem('phone', phone)
+        // onSignUp()
     }
 
     function handleOnSubmit(e) {
@@ -63,10 +78,10 @@ const Signup1 = () => {
 
     // }
     const onGetItems = () => {
-        setFirstname(localStorage.getItem('firstname'))
-        setLastname(localStorage.getItem('lastname'))
+        setFirstName(localStorage.getItem('firstname'))
+        setLastName(localStorage.getItem('lastname'))
         setEmail(localStorage.getItem('email'))
-        setPhone(localStorage.getItem('phone'))
+        setPhoneNumber(localStorage.getItem('phone'))
     }
 
 
@@ -105,13 +120,13 @@ const Signup1 = () => {
                                     <img src={user} className="mt-3 ml-3 absolute z-10 h-5 w-5 "
                                         aria-hidden="true"></img>
                                 </span> */}
-                                <RegLoginInputs icon={user} type="text" id="firstname" required placeholder="Firstname" onChange={(e) => setFirstname(e.target.value)} value={firstname} />
+                                <RegLoginInputs icon={user} type="text" id="firstname" required placeholder="Firstname" onChange={(e) => setFirstName(e.target.value)} value={firstName} />
                             </div>
 
                             <div className='w-full md:w-1/2 mb-2  md:pl-2'>
                                 <label htmlFor="lastname" className="text-[13px] font-[500px] leading-5">Last Name</label>
                                 
-                                <RegLoginInputs icon={user} type="text" placeholder="Lastname" onChange={(e) => setLastname(e.target.value)} value={lastname} />
+                                <RegLoginInputs icon={user} type="text" placeholder="Lastname" onChange={(e) => setLastName(e.target.value)} value={lastName} />
                             </div>
                         </div>
 
@@ -124,7 +139,7 @@ const Signup1 = () => {
                         <div className='mb-2'>
                             <label htmlFor="phone" className="text-[13px] font-[500px] leading-5">Phone Number </label>
 
-                            <RegLoginInputs icon={Phone} type="number" placeholder="Phone Number" onChange={(e) => setPhone(e.target.value)} value={phone} />
+                            <RegLoginInputs icon={Phone} type="number" placeholder="Phone Number" onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber} />
                         </div>
 
                         <div className='relative mb-6'>
@@ -149,11 +164,11 @@ const Signup1 = () => {
 
                         <div>
                             {/* <Link to="/OtpVerification"> */}
-                                <Button text="NEXT" onClick={() => handleClick}></Button>
+                                <Button text="NEXT" onClick={ () => handleClick()}></Button>
                             {/* </Link> */}
                         </div>
                     </form>
-                    <div class="flex items-center pt-4">
+                    <div className="flex items-center pt-4">
                         {/* <!-- The left line --> */}
                         <div className="flex-grow h-px bg-[#5B2E4F]"></div>
 

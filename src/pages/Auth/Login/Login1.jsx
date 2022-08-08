@@ -2,17 +2,15 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import HerVest from './../../../assets/images/hervest.svg'
 import LoginImg from './../../../assets/images/Login1.svg'
-import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField.jsx'
 import Button from '../../../shared-components/Form/Button'
-import { Login } from "../../../services/api"
 import mail from '../../../assets/images/mail.svg'
 import lock from '../../../assets/images/lock.svg'
-import eye from '../../../assets/images/Eye.png'
 import google from '../../../assets/images/google.png'
 import facebook from '../../../assets/images/facebook.png'
 import { FaEye, FaEyeSlash, FaMailBulk, FaBlenderPhone } from "react-icons/fa";
 import RegLoginInputs from '../../../shared-components/Form/RegLoginInputs'
 import toast from 'react-hot-toast'
+import { POSTwithoutTOKEN } from '../../../services/network/users'
 
 
 const Login1 = () => {
@@ -30,8 +28,10 @@ const Login1 = () => {
 
     const onLogin = async () => {
         try { 
-            const response = await Login.login(loginData)
-            console.log('message', response.data.message)
+            const response = await POSTwithoutTOKEN('account/login', loginData)
+            localStorage.setItem('token', response.data.data.token)
+            console.log('message', response.data)
+            console.log(response.data.data);
             navigate('/Dashboard')
         } catch (error) {
             console.log(error)
@@ -39,6 +39,8 @@ const Login1 = () => {
             
         }
     }
+
+    
 
     const handleLogin = () => {
         onLogin()
@@ -108,7 +110,7 @@ const Login1 = () => {
                         </div>
 
                     </form>
-                    <div class="flex items-center py-2">
+                    <div className="flex items-center py-2">
                         {/* <!-- The left line --> */}
                         <div className="flex-grow h-px bg-[#5B2E4F]"></div>
 

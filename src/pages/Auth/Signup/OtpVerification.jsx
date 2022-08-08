@@ -4,8 +4,9 @@ import SignupImg from '../../../assets/images/Signup.svg'
 import HerVest from '../../../assets/images/hervest.svg'
 import Button from '../../../shared-components/Form/Button'
 import Dropdown from '../../../shared-components/Form/Dropdown'
-import { VerifyEmail } from "../../../services/api"
+//import { verifyEmail } from "../../../services/api"
 import toast from 'react-hot-toast'
+import { POSTwithoutTOKEN } from "../../../services/network/users"
 
 const OtpVerification = () => {
 
@@ -23,7 +24,7 @@ const OtpVerification = () => {
     const onVerifyEmail = async () => {
         console.log('I  ran immediately');
         try {
-        const response = await VerifyEmail.verifyEmail(verifyEmailData)
+        const response = await POSTwithoutTOKEN('account/verifyemail',verifyEmailData)
         console.log('message', response.data.message)
         localStorage.clear();
          navigate('/Welcome')

@@ -1,14 +1,32 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Sidebar from "../../shared-components/Sidebar/Sidebar"
 import Dropdown from "../../shared-components/Form/Dropdown"
 import PrimaryFormField from "../../shared-components/Form/PrimaryFormField"
 import Button from "../../shared-components/Form/Button"
-
+import { POSTwithTOKEN } from "../../services/network/users"
+import toast from 'react-hot-toast'
 
 const CreatePlan = () => {
     const [planName, setplanName] = useState("")
-    const [savingTarget, setsavingTarget] = useState("")
+    const [targetAmount, setTargetAmount] = useState("")
+    const [frequency, setFrequency] = useState("")
+    const [savingAmount, setSavingAmount] = useState("")
+    const [targetDuration, setTargetDuration] = useState("")
+
+    const navigate = useNavigate()
+
+    const addPlanData = {
+
+    }
+
+    const addPlan = async () => {
+        try {
+            const response = POSTwithTOKEN('/savings/addplan')
+        } catch (error) {
+            
+        }
+    }
 
 
     function handleOnSubmit(e) {
@@ -50,7 +68,7 @@ const CreatePlan = () => {
 
                                 <div className="flex justify-center">
                                     <div className="mb-6 sm:w-96">
-                                        <Dropdown placeholder="Saving frequency" valueArr={["1","2", "tayo","4"]}></Dropdown>
+                                        <Dropdown placeholder="Saving frequency" valueArr={["Daily","Weekly", "Monthly","Manual"]} onChange={ (e) => setFrequency(e.target.value)} value={frequency} ></Dropdown>
                                     </div>
                                 </div>
                                 <div>
@@ -67,9 +85,8 @@ const CreatePlan = () => {
                                 </div>
 
                                 <div className="flex justify-center">
-                                    <div className="mb-6 sm:w-96">
-                                        <Dropdown placeholder="Amount to save periodically" valueArr={["1","2", "tayo","4"]}></Dropdown>
-                                    </div>
+                                    <label htmlFor="Amount to save periodically" className="sr-only">Amount to save periodically </label>
+                                        <PrimaryFormField type="text" placeholder="Amount to save periodically" onChange={(e) => setSavingAmount(e.target.value)} value={savingAmount} />
                                 </div>
                                 <div>
                                     <label for="default-toggle" className="relative inline-flex items-center mb-4 cursor-pointer">
@@ -86,13 +103,13 @@ const CreatePlan = () => {
 
                                 <div>
                                     <label htmlFor="Saving target" className="sr-only">Saving target </label>
-                                    <PrimaryFormField type="text" placeholder="Saving target"  onChange={(e) => setsavingTarget(e.target.value)} value={savingTarget}/>
+                                    <PrimaryFormField type="text" placeholder="Saving target"  onChange={(e) => setTargetAmount(e.target.value)} value={targetAmount}/>
                                 </div><br />
 
                                 <div className="flex justify-center">
                                     
                                         <div className="mb-6 w-96 md:w-96 lg:w-full">
-                                            <Dropdown placeholder="For how long would you like to save?" valueArr={["1","2", "tayo","4"]}></Dropdown>
+                                            <Dropdown placeholder="For how long would you like to save?" valueArr={["0 month","1 month", "2 months","3 months", "4 months", "5 months", "6 months", "7 months", "8 months", "9 months", "10 months", "11 months", "12 months"]} onChange={(e) => setTargetDuration(e.target.value)} value={targetDuration}></Dropdown>
                                         </div>
                                     
                                 </div>

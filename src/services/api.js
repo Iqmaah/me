@@ -1,18 +1,20 @@
-import * as SignUp from './network/onboarding'
-import * as Login from './network/onboarding'
-import * as ResetPassword from './network/onboarding'
-import * as ChangePassword from './network/onboarding'
-import * as VerifyEmail from './network/onboarding'
+// import * as SignUp from './network/onboarding'
+// import * as Login from './network/onboarding'
+// import * as ResetPassword from './network/onboarding'
+// import * as ChangePassword from './network/onboarding'
+// import * as VerifyEmail from './network/onboarding'
+
+import {
+     login, resetPassword, changePassword, verifyEmail
+}
+    from './network/onboarding'
 
 // import {
-//     signUp, login, resetPassword
-// }
-//     from './network/onboarding'
+//     myStats
+// } from './network/users'
 
-
-
-export {SignUp};
-export {Login}
-export {ResetPassword}
-export {ChangePassword}
-export {VerifyEmail}
+//export {signUp};
+export {login}
+export {resetPassword}
+export {changePassword}
+export {verifyEmail}

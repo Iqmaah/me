@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import Sidebar from '../../shared-components/Sidebar/Sidebar'
 import tobi from './../../assets/images/Tobi.png'
@@ -11,11 +11,41 @@ import img3 from './../../assets/images/img3.png'
 import EmptyPlan from './EmptyPlan'
 import LoginModal from '../Auth/Login/Loginmodal'
 import DashboardModal from "../../contexts/DashboardModal"
+import { GETwithTOKEN } from "../../services/network/users"
 
 
 const Dashboard = () => {
 
   const { showDashboardModal } = useContext(DashboardModal)
+  const [availableBalance, setSAvailableBalance] = useState("")
+  const [totalSavings, setTotalSavings] = useState("")
+  const [totalReturns, setTotalReturns] = useState("")
+  const [impactInvestments, setImpactInvestments] = useState()
+  const [referralCode, setRefferalCode] = useState("")
+
+useEffect(() => {
+    MyStats()
+    console.log('USE EFFECT');
+
+}, []);
+ 
+  const MyStats = async () => {
+      try{
+          console.log('I RAN MY STATSSSSS');
+          const response = await GETwithTOKEN('/user/mystats')
+          console.log(response.data);
+          const investments = parseFloat(response.data.data.totalSavings) + parseFloat(response.data.data.totalInterest)
+        //   totalSavings
+        setSAvailableBalance(response.data.data.totalPurseBalance)
+        setTotalSavings(response.data.data.totalSavings)
+        setTotalReturns(response.data.data.totalInterest)
+        setImpactInvestments(JSON.stringify(investments))
+        console.log(investments);
+        setRefferalCode(response.data.data.referralCode)
+      } catch(error) {
+ 
+      }
+  }
 
     const Plans = [
          
@@ -43,19 +73,19 @@ const Dashboard = () => {
                 <div className="mx-auto grid grid-cols-2 gap-10 items-center lg:grid-cols-4 lg:justify-between text-white">
                     <div>
                         <p className='text-[#FAFAFA] pb-2  text-[14px] font-[400px] leading-5'>Available Balance</p>
-                        <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦1,063,345.04</p> 
+                        <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦{availableBalance? availableBalance : "00.00" }</p> 
                     </div>
                     <div>
                        <p className='text-[#FAFAFA] pb-2 text-[14px] font-[400px] leading-5'>Impact Investments</p>
-                       <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦1,007,345.04</p>
+                       <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦{impactInvestments? impactInvestments : "00.00"}</p>
                     </div>
                     <div>
                        <p className='text-[#FAFAFA] pb-2 text-[14px] font-[400px] leading-5'>Total Savings</p>
-                       <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦2,007,345.04</p>
+                       <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦{totalSavings? totalSavings : "00.00"}</p>
                     </div>
                     <div>
                        <p className='text-[#FAFAFA] pb-2 text-[14px] font-[400px] leading-5'>Total Returns</p>
-                       <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦56,000.00</p>
+                       <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦{totalReturns ? totalReturns : "00.00"}</p>
                     </div>  
                 </div>
             </div><br/>
@@ -138,17 +168,17 @@ const Dashboard = () => {
                 <div className= "grid grid-rows-2 gap-4 p-6 max-w-sm rounded-lg border border-gray-200 shadow-md bg-[#5B2E4F] text-white " style={{ backgroundImage: `url(${img1})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
                     <Link to="/CreatePlan">   
                         <div className="">
-                            <h2 className="text-base BoldFonter text-[16px] font-[700px] leading-5"> Create a savings plan </h2>  
+                            <h2 className="BoldFonter text-[16px] font-[700px] leading-5 pb-2"> Create a savings plan </h2>  
                             <p className="pb-2 text-[10px] font-[400px] leading-3"> Earn up to 12% </p> 
                         </div>
                     </Link>    
                 </div> 
 
-                <div className= "grid grid-rows-2 gap-4 p-6 max-w-sm rounded-lg border  border-gray-200 shadow-md bg-[#265859]" style={{ backgroundImage: `url(${img2})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
+                <div className= "grid grid-rows-2 gap-4 p-6 max-w-sm rounded-lg border  border-gray-200 shadow-md bg-[#265859] text-white" style={{ backgroundImage: `url(${img2})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
                         <div className="">
-                            <h2 className="text-sm BoldFonter text-[16px] font-[700px] leading-5"> Invest in a </h2> 
-                            <h2 className="text-sm BoldFonter text-[16px] font-[700px] leading-5">Female Farmer </h2>
-                            <p className="text-xs pb-2 text-[10px] font-[400px] leading-3"> Get up to 25% returns per annum</p>
+                            <h2 className="BoldFonter text-[16px] font-[700px] leading-5"> Invest in a Female</h2> 
+                            <h2 className="BoldFonter text-[16px] font-[700px] leading-5 pb-2">Farmer </h2>
+                            <p className="pb-2 text-[10px] font-[400px] leading-3"> Get competitive returns per annum</p>
                             
                         </div>
                 </div> 
@@ -156,15 +186,20 @@ const Dashboard = () => {
 
                 <div className= "grid grid-rows-2 gap-4 p-6 max-w-sm rounded-lg border   border-gray-200 shadow-md bg-[#F2F1F3]" style={{ backgroundImage: `url(${img3})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
                         <div className="">
-                            <h2 className="text-[#5B2E4F] font-bold text-[16px] font-[700px] leading-5"> Invite your girls to  </h2> 
-                            <h2 className="text-[#5B2E4F] font-bold text-[16px] font-[700px] leading-">HerVest </h2> 
+                            <h2 className="text-[#5B2E4F] BoldFonter text-[16px] font-[700px] leading-5"> Invite your girls to  </h2> 
+                            <h2 className="text-[#5B2E4F] BoldFonter text-[16px] font-[700px] leading-5 pb-2">HerVest </h2> 
                             <p className="text-xs pb-2 text-[10px] font-[400px] leading-"> Share your girl code</p>
                             
                         </div>
-                        <div className="mt-5">
-                        <Link to="" className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-[#E2698D] rounded-lg hover:bg-rose-500 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
-                            HG7FIB   
-                        </Link>
+                        <div className="mt-5 flex flex-row space-x-4">
+                            <div to="" className="inline-flex items-center text-[16px] font-[700px] leading-5 py-1 px-3 BoldFonter text-center text-white bg-[#5B2E4F] rounded-lg ">
+                                {referralCode}   
+                            </div>
+                            <div>
+                                <button className="text-[#265859] inline-flex items-center text-[16px] font-[700px] leading-5 pt-3">
+                                    Share
+                                </button>
+                            </div>
                     
                         </div>
                 </div> 

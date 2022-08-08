@@ -1,24 +1,32 @@
 import { useEffect, useState } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField.jsx'
 import Button from '../../../shared-components/Form/Button.jsx'
-import { ResetPassword } from '../../../services/api.js'
 import HerVest from '../../../assets/images/hervest.svg'
 import resetpwrd from '../../../assets/images/Login2.svg'
 import mail from '../../../assets/images/mail.svg'
 import RegLoginInputs from '../../../shared-components/Form/RegLoginInputs.jsx'
+import { POSTwithoutTOKEN } from '../../../services/network/users'
+import toast from 'react-hot-toast'
 
 const PasswordReset1 = () => {
 
     const [email, setEmail] = useState("")
+    const navigate = useNavigate()
 
     const resetPasswordData = {
         email
     }
 
     const onPasswordReset= async() => {
-        const response = await ResetPassword.resetPassword(resetPasswordData)
-        console.log('message', response.data.message)
+        try {
+            const response = await POSTwithoutTOKEN('account/reset_password' ,resetPasswordData)
+            console.log('message', response.data.message)
+            navigate('/PasswordReset2')
+        } catch (error) {
+            console.log(error);
+            toast(error.response.data.message)
+        }
     }
 
     const handleResetPassword = () => {
@@ -58,9 +66,9 @@ const PasswordReset1 = () => {
                                 </div><br />
 
                                 <div className='mt-4'>
-                                    <Link to="/PasswordReset2" className='text-[#5B2E4F]'>
-                                        <Button text="SEND OTP"  onClick={handleResetPassword}/>
-                                    </Link> 
+                                    {/* <Link to="/PasswordReset2" className='text-[#5B2E4F]'> */}
+                                        <Button text="SEND OTP"  onClick={ () => handleResetPassword()}/>
+                                    {/* </Link>  */}
                                 
                                 </div><br/>
 

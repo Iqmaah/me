@@ -4,11 +4,11 @@ import SignupImg from '../../../assets/images/Signup.svg'
 import HerVest from '../../../assets/images/hervest.svg'
 import PrimaryFormField from '../../../shared-components/Form/PrimaryFormField'
 import Button from '../../../shared-components/Form/Button'
-import { ChangePassword } from '../../../services/api'
 import lock from '../../../assets/images/lock.svg'
 import { FaEye, FaEyeSlash, FaMailBulk, FaBlenderPhone } from "react-icons/fa";
 import RegLoginInputs from '../../../shared-components/Form/RegLoginInputs.jsx'
 import toast from 'react-hot-toast'
+import { POSTwithoutTOKEN } from '../../../services/network/users'
 
 // import { ResetPassword } from '../../../services/api'
 
@@ -29,7 +29,7 @@ const PasswordReset2 = () => {
     const onChangePassword = async () => {
         try {
             if (newPassword === confirmNewPassword){
-                const response = await ChangePassword.changePassword(changePasswordData)
+                const response = await POSTwithoutTOKEN('/account/change_password' ,changePasswordData)
                 console.log('message', response.data.message)
                 navigate('/Login1')
             }

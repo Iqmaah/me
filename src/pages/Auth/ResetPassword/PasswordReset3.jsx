@@ -6,7 +6,7 @@ import SignupImg from '../../../assets/images/Signup.svg'
 import HerVest from '../../../assets/images/hervest.svg'
 import lock from '../../../assets/images/lock.svg'
 import eye from '../../../assets/images/Eye.png'
-import { ChangePassword } from '../../../services/api.js'
+import { changePassword } from '../../../services/api.js'
 import { FaEye, FaEyeSlash, FaMailBulk, FaBlenderPhone } from "react-icons/fa";
 import RegLoginInputs from '../../../shared-components/Form/RegLoginInputs.jsx'
 
@@ -25,7 +25,7 @@ const PasswordReset3 = () => {
     const onChangePassword = async () => {
 
         if (newPassword === confirmNewPassword) {
-            const response = await ChangePassword.changePassword(changePasswordData)
+            const response = await changePassword.changePassword(changePasswordData)
             console.log('message', response.data.message)
         }
 

@@ -12,7 +12,7 @@ const RegLoginInputs = ({ type, icon, label, placeholder, onChange, value,id, ..
 
             <input
                 type={type || "text"}
-                required={true}
+                required
                 value={value}
                 className="pl-8 appearance-none rounded-md relative block w-full
              px-3 py-3 text-[14px] font-[300px] leading-5 bg-[#F8F1F6] placeholder-[#33343D]
