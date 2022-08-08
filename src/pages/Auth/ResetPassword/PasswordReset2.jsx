@@ -29,7 +29,7 @@ const PasswordReset2 = () => {
     const onChangePassword = async () => {
         try {
             if (newPassword === confirmNewPassword){
-                const response = await POSTwithoutTOKEN('/account/change_password' ,changePasswordData)
+                const response = await POSTwithoutTOKEN('account/change_password' ,changePasswordData)
                 console.log('message', response.data.message)
                 navigate('/Login1')
             }

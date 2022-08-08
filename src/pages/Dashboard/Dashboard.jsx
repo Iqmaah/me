@@ -32,7 +32,7 @@ useEffect(() => {
   const MyStats = async () => {
       try{
           console.log('I RAN MY STATSSSSS');
-          const response = await GETwithTOKEN('/user/mystats')
+          const response = await GETwithTOKEN('user/mystats')
           console.log(response.data);
           const investments = parseFloat(response.data.data.totalSavings) + parseFloat(response.data.data.totalInterest)
         //   totalSavings

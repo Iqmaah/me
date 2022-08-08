@@ -22,7 +22,7 @@ const CreatePlan = () => {
 
     const addPlan = async () => {
         try {
-            const response = POSTwithTOKEN('/savings/addplan')
+            const response = POSTwithTOKEN('savings/addplan')
         } catch (error) {
             
         }
