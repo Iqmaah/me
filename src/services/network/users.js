@@ -1,5 +1,5 @@
 import axios from "axios";
-const base_URL = 'http://stageapi.hervest.ng/api'
+const base_URL = 'https://stageapi.hervest.ng/api'
 // const token = localStorage.getItem('HVST_TOKEN')
 //const token = "NcPBdwq7xT4F8Gxbax8gL2AM/tDQv7yzU3WGUbeX+wNRcQ6g9jDuQLSSOm77jlYyoW/5kzYAiggCalprr1Y4f8vneIU1kqyKyKYSvF0zjb1eomqLkSc+BZAW2g0xiOLWuCQVW/uXnEv29dWESOcSOJg="
 const token = localStorage.getItem("token")
