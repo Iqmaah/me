@@ -1,15 +1,59 @@
-import { Link } from "react-router-dom"
+//import { useState } from "react"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import Sidebar from "../../shared-components/Sidebar/Sidebar"
 import Button from "../../shared-components/Form/Button"
+import { POSTwithTOKEN } from "../../services/network/users"
+import toast from 'react-hot-toast'
+
 
 const PlanSummary = () => {
+    const addPlanData = useLocation();
+    console.log(addPlanData.state);
+    const { planName,targetAmount,frequency,savingAmount,targetDuration,interestRate,targetDate } = addPlanData.state
+
+    // const planName= localStorage.getItem('planName')
+    // const targetAmount = localStorage.getItem('targetAmount')
+    // const frequency = localStorage.getItem('frequency')
+    // const savingAmount = localStorage.getItem('savingAmount',)
+    // const targetDuration = localStorage.getItem('targetDuration')
+
+    // const addPlanData = 
+
+    const navigate = useNavigate()
+
+
+    const addPlan = async () => {
+        try {
+            const response =await POSTwithTOKEN('savings/addplan', addPlanData.state)
+            console.log(response)
+            console.log(addPlanData);
+            navigate("/PlanPaymentMethod")
+            
+        } catch (error) {   
+            console.log(error);
+            toast(error.response.data.message)
+            
+        }
+    }
+
+    // function formatDate(date, format) {
+    //     const map = {
+    //         mm: date.getMonth() + 1,
+    //         dd: date.getDate(),
+    //         yy: date.getFullYear().toString().slice(-2),
+    //         yyyy: date.getFullYear()
+    //     }
+    
+    //     return format.replace(/yy-mm-dd-yyy/gi, matched => map[matched])
+    // }
+
     return(
         <div className="flex min-h-screen bg-slate-50 pb-20">
             <Sidebar/>
 
             <div>
                 <div className="mx-8 mt-8 mb-4 font-bold">
-                    <h classname="text-[32px] font-[700px] leading-8 ">Plans</h>
+                    <h1 className="text-[32px] font-[700px] leading-8 ">Plans</h1>
                 </div>
                 <div className="mx-8 mb-8">
                     <span className="text-[#B4B5C1] text-[14px] font-[400px] leading-5 "><Link to="/Plans">Plans</Link></span>
@@ -33,71 +77,70 @@ const PlanSummary = () => {
                         </Link>
                     </div>
 
-                    {/* <div className='grid sm:grid-rows-1 md:grid-cols-2 gap-2 h-screen'> */}
-                    <div className="flex flex-row h-screen">
+                    <div className='grid sm:grid-rows-1 sm:gap-4 md:grid-cols-2 md:gap-2 '>
+                    
                         <div>
-                            <h className="text-[32px] font-[700px] leading-10 BoldFonter">Here’s a summary</h>
+                            <p className="text-[32px] font-[700px] leading-10 BoldFonter">Here’s a summary</p>
                             <p className="text-[16px] font-[300px] leading-6 text-[#7C7F93] pt-4">Before you go, here’s a summary of your savings plan.</p>
                         </div>
 
-                        <div className="rounded-2xl border-2 border-gray-300 p-4 mr-8 mb-8" style={{ width: "450px"}}>
+                        <div className="rounded-2xl border-2 border-gray-300 p-4  mb-8" style={{ width: ""}}>
                             <div className="mb-8">
-                                <p className="text-[#666666] text-[16px] font-[400px] leading-5 pb-2">Plan</p>
-                                <h className="text-[20px] font-[400px] leading-6 BoldFonter">MBA Harvard</h>
+                                <p className="text-[#666666] text-[16px] font-[400px] leading-5 pb-2">Plan name</p>
+                                <p className="text-[20px] font-[400px] leading-6 BoldFonter">{planName}</p>
                             </div><hr/>
 
                             <div className="grid grid-cols-2 gap-x-20 gap-y-4 mb-8 mt-8" >
                                 <div>
                                     <p className='text-[#666666] pb-2  text-[14px] font-[300px] leading-5'>Target amount</p>
-                                    <p className='text-[16px] font-[400px] leading-6'>₦1,200,000</p>
+                                    <p className='text-[16px] font-[400px] leading-6'>{targetAmount}</p>
                                 </div>
                                 
                                 <div>
                                     <p className='text-[#666666] pb-2  text-[14px] font-[300px] leading-5'>Periodic savings</p>
-                                    <p className='text-[16px] font-[400px] leading-6'>₦1,000</p>
+                                    <p className='text-[16px] font-[400px] leading-6'>{savingAmount}</p>
                                 </div>
 
                                 <div>
                                     <p className='text-[#666666] pb-2  text-[14px] font-[300px] leading-5'>Start date</p>
-                                    <p className='text-[16px] font-[400px] leading-6'>16th June, 2020</p>
+                                    <p className='text-[16px] font-[400px] leading-6'>{(new Date().toISOString()).slice(0,10)}</p>
                                 </div>
                                 
                                 <div>
                                     <p className='text-[#666666] pb-2  text-[14px] font-[300px] leading-5'>Maturity date</p>
-                                    <p className='text-[16px] font-[400px] leading-6'>20th September, 2021</p>
+                                    <p className='text-[16px] font-[400px] leading-6'>{targetDate}</p>
+                                    {/* <input className='text-[16px] font-[400px] leading-6' type={'date'}  /> */}
                                 </div>
 
                                 <div>
                                     <p className='text-[#666666] pb-2  text-[14px] font-[300px] leading-5'>Saving frequency</p>
-                                    <p className='text-[16px] font-[400px] leading-6'>Monthly</p>
+                                    <p className='text-[16px] font-[400px] leading-6'>{frequency}</p>
                                 </div>
                                 
                                 <div >
                                     <p className='text-[#666666] pb-2  text-[14px] font-[300px] leading-5'>Saving tenure</p>
-                                    <p className='text-[16px] font-[400px] leading-6'>1 year</p>
+                                    <p className='text-[16px] font-[400px] leading-6'>{targetDuration}</p>
                                 </div>
                             </div><hr/>
 
                             <div className="grid grid-cols-2 gap-x-20 gap-y-4 mt-8">
                                     <div>
-                                        <p className='text-[#666666] pb-2  text-[14px] font-[300px] leading-5'>Withholding tax</p>
-                                        <p className='text-[16px] font-[400px] leading-6'>12%</p>
+                                        <p className='text-[#666666] pb-2  text-[14px] font-[300px] leading-5'>Interest rate</p>
+                                        <p className='text-[16px] font-[400px] leading-6'>{interestRate}%</p>
                                     </div>
                                     
-                                    <div>
-                                        <p className='text-[#666666] pb-2  text-[14px] font-[300px] leading-5'>Saving tenure</p>
-                                        <p className='text-[16px] font-[400px] leading-6'>₦1,600,000</p>
-                                    </div>
+                            </div>
+                            <div className="flex justify-end mt-8">
+                                        {/* <Link to="/PlanPaymentMethod"> */}
+                                            <Button text="NEXT" onClick={() => addPlan()}/>
+                                        {/* </Link> */}
                             </div>
                         </div>
+                        
                     </div>
-                    <div className="flex justify-end">
-                        <div>
-                            <Link to="/PlanPaymentMethod">
-                                <Button text="NEXT" />
-                            </Link>
-                        </div>
-                    </div>
+                     
+                        
+                   
                 </div>
                 
             </div>

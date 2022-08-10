@@ -1,7 +1,10 @@
+import { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import Sidebar from "../../shared-components/Sidebar/Sidebar"
 import piggybank from './../../assets/images/piggybank.png'
 import Plus from './../../assets/images/Plus.png'
+import { GETwithTOKEN } from '../../services/network/users'
+
 
 
 const Plans = () => {
@@ -26,18 +29,40 @@ const Plans = () => {
           }
       ]
 
+    // const [plans, setPlans] = useState([])
+
+    // useEffect(() => {
+    //     myPlans()
+    //     console.log('USE EFFECT');
+    
+    // }, []);
+
+    //   const  myPlans =async () => {
+    //     try {
+    //         const response = await GETwithTOKEN('savings/listplan')
+    //         const data_ = await response.json()
+    //         console.log(response)
+
+    //         setPlans(data_.data)
+            
+    //     } catch (error) {
+    //         console.log(error);
+            
+    //     }
+    //   }
+
     return(
         <div className="flex min-h-screen bg-slate-50 pb-20">
             <Sidebar/>
 
             <div className='p-6'>
                 <div className="pb-10 font-bold">
-                    <h className="text-[24px] font-[700px] leading-8"> Plans</h>
+                    <h2 className="text-[24px] font-[700px] leading-8"> Plans</h2>
                 </div>
                 
                 <p className="text-[#B4B5C1] pb-4 text-[14px] font-[300px] leading-5">Savings balance</p>
 
-                <h className="BoldFonter text-[40px] font-[700px] " style={{lineHeight: "64.8px"}}>N420,548.00</h>
+                <h2 className="BoldFonter text-[40px] font-[700px] " style={{lineHeight: "64.8px"}}>N420,548.00</h2>
 
                 {/* <div>
                     <a>My savings</a> <img src={arrows}></img>  <a>My Investments</a>
@@ -80,9 +105,9 @@ const Plans = () => {
                 } 
                 </div><br/>
 
-                <div className="grid grid-cols-1  lg:grid-cols-3 gap-4">
+                {/* <div className="grid grid-cols-1  lg:grid-cols-1 gap-4"> */}
                     <Link to="/CreatePlan">
-                        <div className= "grid grid-rows-2 gap-4 pt-5 pr-5 pl-5  bg-white rounded-lg border border-gray-200 shadow-md ">
+                        <div className= "grid grid-rows-2 gap-4 pt-5 pr-5 pl-5 w-80 bg-white rounded-lg border border-gray-200 shadow-md ">
                             <div className="flex flex-row space-x-4 pb-4">
                                 <div className="bg-[#F4CDE0] rounded-full items-center p-4 ">
                                     <img src= {Plus} alt="Plus"/>
@@ -93,7 +118,7 @@ const Plans = () => {
                             </div>
                         </div> 
                     </Link>  
-                </div>
+                {/* </div> */}
                 
             </div>
 

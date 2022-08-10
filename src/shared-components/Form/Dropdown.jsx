@@ -13,7 +13,7 @@ const Dropdown = ({ placeholder, onChange, valueArr }) => {
             <option value='' >{placeholder || "Select an item"}</option>
             {
                 Array.isArray(valueArr) ?
-                         valueArr.map((data, i) =>   <option key={i} value={data}>{data}</option>)
+                         valueArr.map((data, i) =>   <option key={i} value={data.value}>{data.name}</option>)
                : null
             }
             

@@ -6,12 +6,13 @@ import bgdash from './../../assets/images/bg-dash.png'
 import piggybank from './../../assets/images/piggybank.png'
 // import Plus from './../../assets/images/Plus.png'
 import img1 from './../../assets/images/img1.png'
-import img2 from './../../assets/images/img2.png'
+import img2 from './../../assets/images/img2.svg'
 import img3 from './../../assets/images/img3.png'
 import EmptyPlan from './EmptyPlan'
 import LoginModal from '../Auth/Login/Loginmodal'
 import DashboardModal from "../../contexts/DashboardModal"
 import { GETwithTOKEN } from "../../services/network/users"
+
 
 
 const Dashboard = () => {
@@ -54,41 +55,44 @@ useEffect(() => {
      
 
     return(
-    <div className="flex min-h-screen bg-slate-50 pb-20">
+    <div className="flex bg-slate-50 pb-20">
        { showDashboardModal ?  <LoginModal  /> : null }
         <Sidebar/>
 
-        <div className='p-6 '>
+        <div className='mt-6 px-6'>
             
             <div className='flex flex-row space-x-4 pb-2'>
                 <img src={tobi} className=" w-14 h-14"></img>
-                <div className="flex flex-col">
+                <div className="">
                     <p className="text-base text-[#B4B5C1] ">Hello,</p>
-                    <span className="text-[#B4B5C1] text-lg font-bold">Oluwatobi</span>
+                    <p className="text-[#B4B5C1] text-lg font-bold">Oluwatobi</p>
                 </div> 
             </div>
 
 
-            <div className='p-5 md:p-10 rounded-lg ' style={{ backgroundImage: `url(${bgdash})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", height: "" }}>
-                <div className="mx-auto grid grid-cols-2 gap-10 items-center lg:grid-cols-4 lg:justify-between text-white">
-                    <div>
-                        <p className='text-[#FAFAFA] pb-2  text-[14px] font-[400px] leading-5'>Available Balance</p>
-                        <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦{availableBalance? availableBalance : "00.00" }</p> 
-                    </div>
-                    <div>
-                       <p className='text-[#FAFAFA] pb-2 text-[14px] font-[400px] leading-5'>Impact Investments</p>
-                       <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦{impactInvestments? impactInvestments : "00.00"}</p>
-                    </div>
-                    <div>
-                       <p className='text-[#FAFAFA] pb-2 text-[14px] font-[400px] leading-5'>Total Savings</p>
-                       <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦{totalSavings? totalSavings : "00.00"}</p>
-                    </div>
-                    <div>
-                       <p className='text-[#FAFAFA] pb-2 text-[14px] font-[400px] leading-5'>Total Returns</p>
-                       <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦{totalReturns ? totalReturns : "00.00"}</p>
-                    </div>  
+            {/* <div className='w-full p-5 md:p-10 rounded-lg mx-auto flex flex-row space-16 items-center lg:grid-cols-12 lg:justify-between text-white' style={{ backgroundImage: `url(${bgdash})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", height: "" }}> */}
+            <div className="w-full relative mt-3">
+                <div className='flex flex-row flex-wrap p-5 md:p-12 justify-evenly rounded-lg w-full centered text-white' style={{ backgroundImage: `url(${bgdash})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", height: "" }}>
+                        <div>
+                            <p className='text-[#FAFAFA] pb-2  text-[14px] font-[400px] leading-5'>Available Balance</p>
+                            <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦{availableBalance? availableBalance : "00.00" }</p> 
+                        </div>
+                        <div>
+                            <p className='text-[#FAFAFA] pb-2 text-[14px] font-[400px] leading-5'>Impact Investments</p>
+                            <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦{impactInvestments? impactInvestments : "00.00"}</p>
+                        </div>
+                        <div>
+                            <p className='text-[#FAFAFA] pb-2 text-[14px] font-[400px] leading-5'>Total Savings</p>
+                            <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦{totalSavings? totalSavings : "00.00"}</p>
+                        </div>
+                        <div>
+                            <p className='text-[#FAFAFA] pb-2 text-[14px] font-[400px] leading-5'>Total Returns</p>
+                            <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦{totalReturns ? totalReturns : "00.00"}</p>
+                        </div>  
+                    
                 </div>
             </div><br/>
+            
 
 
             <div>
@@ -165,26 +169,36 @@ useEffect(() => {
             </div> */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
-                <div className= "grid grid-rows-2 gap-4 p-6 max-w-sm rounded-lg border border-gray-200 shadow-md bg-[#5B2E4F] text-white " style={{ backgroundImage: `url(${img1})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
+                <div className= "grid grid-rows-2 gap-4 p-6 h-48 max-w-sm rounded-lg border border-gray-200 shadow-md bg-[#5B2E4F] text-white" style={{ backgroundImage: `url(${img1})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
                     <Link to="/CreatePlan">   
                         <div className="">
                             <h2 className="BoldFonter text-[16px] font-[700px] leading-5 pb-2"> Create a savings plan </h2>  
-                            <p className="pb-2 text-[10px] font-[400px] leading-3"> Earn up to 12% </p> 
+                            <p className="text-[10px] font-[400px] leading-3"> Earn up to 12% </p> 
                         </div>
                     </Link>    
                 </div> 
 
-                <div className= "grid grid-rows-2 gap-4 p-6 max-w-sm rounded-lg border  border-gray-200 shadow-md bg-[#265859] text-white" style={{ backgroundImage: `url(${img2})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
+                {/* <div className= "grid grid-rows-2 gap-4 p-6 h-48 max-w-sm rounded-lg border  border-gray-200 shadow-md bg-[#265859] text-white" style={{ backgroundImage: `url(${img2})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
                         <div className="">
                             <h2 className="BoldFonter text-[16px] font-[700px] leading-5"> Invest in a Female</h2> 
                             <h2 className="BoldFonter text-[16px] font-[700px] leading-5 pb-2">Farmer </h2>
-                            <p className="pb-2 text-[10px] font-[400px] leading-3"> Get competitive returns per annum</p>
+                            <p className="text-[10px] font-[400px] leading-3"> Get competitive returns per annum</p>
                             
                         </div>
-                </div> 
+                </div>  */}
+                <div
+                    style={{ backgroundColor: "#265859" }}
+                    className="flex flex-row h-48 drop-shadow w-full max-w-xs mb-10 pl-5 py-4 text-left rounded-xl text-white"
+                    >
+                    <div className="w-2/3">
+                        <p className="boldText ">Invest in a Female Farmer</p>
+                        <small>Get up to 25% returns per anum</small>
+                    </div>
+                    <img alt="icon" src={img2} className="w-36 -mb-4" />
+                </div>
 
 
-                <div className= "grid grid-rows-2 gap-4 p-6 max-w-sm rounded-lg border   border-gray-200 shadow-md bg-[#F2F1F3]" style={{ backgroundImage: `url(${img3})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
+                <div className= "grid grid-rows-2 gap-4 p-6 h-48 max-w-sm rounded-lg border border-gray-200 shadow-md bg-[#F2F1F3]" style={{ backgroundImage: `url(${img3})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
                         <div className="">
                             <h2 className="text-[#5B2E4F] BoldFonter text-[16px] font-[700px] leading-5"> Invite your girls to  </h2> 
                             <h2 className="text-[#5B2E4F] BoldFonter text-[16px] font-[700px] leading-5 pb-2">HerVest </h2> 

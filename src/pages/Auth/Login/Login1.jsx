@@ -29,13 +29,13 @@ const Login1 = () => {
     const onLogin = async () => {
         try { 
             const response = await POSTwithoutTOKEN('account/login', loginData)
-            localStorage.setItem('token', response.data.data.token)
+           localStorage.setItem('token', response.data.data.token)
             console.log('message', response.data)
             console.log(response.data.data);
             navigate('/Dashboard')
         } catch (error) {
             console.log(error)
-            toast(error.response.data.message)
+            toast(error.response.data.message ? error.response.data.message : "Incorrect Login Credentials")
             
         }
     }
