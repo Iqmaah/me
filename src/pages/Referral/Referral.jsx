@@ -4,7 +4,7 @@ import Sidebar from "../../shared-components/Sidebar/Sidebar"
 import ReferralEarningHistory from "../../shared-components/ReferralEarningHistory"
 
 
-const Referral1 = () => {
+const Referral = () => {
     const [showDiv, setShowDiv] = useState(false);
 
     return(
@@ -71,4 +71,4 @@ const Referral1 = () => {
     )
 }
 
-export default Referral1
+export default Referral

@@ -31,7 +31,7 @@ import BankAccount from './pages/FundPurse/TransferFromPurse/BankAccount/BankAcc
 import TopUpBankAcc from './pages/Plans/TopUpBankAcc';
 import MaturedSinglePlanPage from './pages/Plans/MaturedSinglePlanPage';
 import Purse from './pages/FundPurse/Purse';
-import Referral1 from './pages/Referral/Referral1';
+import Referral from './pages/Referral/Referral';
 import Transactions from './pages/Transactions/Transactions';
 import Cards from './pages/Cards/Cards';
 import Banks from './pages/Banks/Banks';

@@ -12,6 +12,7 @@ import EmptyPlan from './EmptyPlan'
 import LoginModal from '../Auth/Login/Loginmodal'
 import DashboardModal from "../../contexts/DashboardModal"
 import { GETwithTOKEN } from "../../services/network/users"
+import toast from 'react-hot-toast'
 
 
 
@@ -23,28 +24,41 @@ const Dashboard = () => {
   const [totalReturns, setTotalReturns] = useState("")
   const [impactInvestments, setImpactInvestments] = useState()
   const [referralCode, setRefferalCode] = useState("")
+  const [firstName, setFirstName] = useState("")
+  const [profile_image, setProfile_image] = useState("")
+  const [token, setToken]= useState("")
+  //const firstName = localStorage.getItem("firstName")
+  //const profile_image = localStorage.getItem("profile_image")
+  console.log(firstName);
 
 useEffect(() => {
     MyStats()
+    setToken(localStorage.getItem("token"))
     console.log('USE EFFECT');
 
-}, []);
+});
  
   const MyStats = async () => {
       try{
           console.log('I RAN MY STATSSSSS');
-          const response = await GETwithTOKEN('user/mystats')
+          const response = await GETwithTOKEN('user/mystats', token)
           console.log(response.data);
           const investments = parseFloat(response.data.data.totalSavings) + parseFloat(response.data.data.totalInterest)
         //   totalSavings
+        
         setSAvailableBalance(response.data.data.totalPurseBalance)
         setTotalSavings(response.data.data.totalSavings)
         setTotalReturns(response.data.data.totalInterest)
         setImpactInvestments(JSON.stringify(investments))
         console.log(investments);
         setRefferalCode(response.data.data.referralCode)
+        localStorage.setItem("totalSavings", response.data.data.totalSavings)
+        setFirstName(localStorage.getItem("firstName"))
+        setProfile_image(localStorage.getItem("profile_image"))
+
       } catch(error) {
- 
+            console.log(error)
+            toast(error.response.data.message)
       }
   }
 
@@ -62,17 +76,17 @@ useEffect(() => {
         <div className='mt-6 px-6'>
             
             <div className='flex flex-row space-x-4 pb-2'>
-                <img src={tobi} className=" w-14 h-14"></img>
+                <img src={profile_image} className=" w-14 h-14"></img>
                 <div className="">
                     <p className="text-base text-[#B4B5C1] ">Hello,</p>
-                    <p className="text-[#B4B5C1] text-lg font-bold">Oluwatobi</p>
+                    <p className="text-[#B4B5C1] text-lg font-bold">{firstName}</p>
                 </div> 
             </div>
 
 
             {/* <div className='w-full p-5 md:p-10 rounded-lg mx-auto flex flex-row space-16 items-center lg:grid-cols-12 lg:justify-between text-white' style={{ backgroundImage: `url(${bgdash})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", height: "" }}> */}
             <div className="w-full relative mt-3">
-                <div className='flex flex-row flex-wrap p-5 md:p-12 justify-evenly rounded-lg w-full centered text-white' style={{ backgroundImage: `url(${bgdash})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", height: "" }}>
+                <div className='flex flex-row flex-wrap p-5 md:p-12 justify-evenly sm:space-x-2 md:space-x-4 rounded-lg w-full centered text-white' style={{ backgroundImage: `url(${bgdash})`, backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition: "center", height: "" }}>
                         <div>
                             <p className='text-[#FAFAFA] pb-2  text-[14px] font-[400px] leading-5'>Available Balance</p>
                             <p className='text-[#FFFFFF] text-[20px] font-[700px] leading-10'>₦{availableBalance? availableBalance : "00.00" }</p> 
@@ -133,50 +147,17 @@ useEffect(() => {
                         
                 )
             }<br/>    
-
-            {/* control */}
-                {/* <div class=" top-1/2 w-full flex justify-between z-20">
-                     <label for="carousel-3" class="inline-block text-red-600 cursor-pointer -translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5">
-                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                     </svg>
-                     </label>
-                     <label for="carousel-2" class="inline-block text-red-600 cursor-pointer translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5">
-                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                     </svg>
-                     </label>
-                </div> */}
-
-            {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                {
-                    NewPlans.map((NewPlan,i) => 
-
-                        <div key={NewPlan.id} className= "grid grid-rows-2 gap-4 pt-5 pr-5 pl-5  bg-white rounded-lg border border-gray-200 shadow-md ">
-                            <div className="relative flex flex-row space-x-4">
-                                <div className="bg-[#F4CDE0] rounded-full items-center p-4 ">
-                                    <img src= {NewPlan.picture} alt="piggybank"/>
-                                </div> 
-                                <span><h2 className="text-sm pt-2" style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>{NewPlan.name}</h2></span>
-                            </div>
-
-                            <div className='flex justify-end mt-2 text-[#265859]'>
-                                <h2 className="" style={{fontFamily: 'Satoshi', fontWeight: "400px",fontSize: "16px", lineHeight: "24px"}}>{NewPlan.create}</h2> 
-                            </div>
-                        </div>   
-                    )
-                } 
-            </div> */}
+            
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
-                <div className= "grid grid-rows-2 gap-4 p-6 h-48 max-w-sm rounded-lg border border-gray-200 shadow-md bg-[#5B2E4F] text-white" style={{ backgroundImage: `url(${img1})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
-                    <Link to="/CreatePlan">   
+                <Link to="/CreatePlan"> 
+                    <div className= "grid grid-rows-2 gap-4 p-6 h-48 max-w-sm rounded-lg border border-gray-200 shadow-md bg-[#5B2E4F] text-white" style={{ backgroundImage: `url(${img1})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>     
                         <div className="">
                             <h2 className="BoldFonter text-[16px] font-[700px] leading-5 pb-2"> Create a savings plan </h2>  
                             <p className="text-[10px] font-[400px] leading-3"> Earn up to 12% </p> 
-                        </div>
-                    </Link>    
-                </div> 
+                        </div>    
+                    </div> 
+                </Link>
 
                 {/* <div className= "grid grid-rows-2 gap-4 p-6 h-48 max-w-sm rounded-lg border  border-gray-200 shadow-md bg-[#265859] text-white" style={{ backgroundImage: `url(${img2})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
                         <div className="">
@@ -186,37 +167,40 @@ useEffect(() => {
                             
                         </div>
                 </div>  */}
-                <div
-                    style={{ backgroundColor: "#265859" }}
-                    className="flex flex-row h-48 drop-shadow w-full max-w-xs mb-10 pl-5 py-4 text-left rounded-xl text-white"
-                    >
-                    <div className="w-2/3">
-                        <p className="boldText ">Invest in a Female Farmer</p>
-                        <small>Get up to 25% returns per anum</small>
+                <Link to="/Investments">
+                    <div
+                        style={{ backgroundColor: "#265859" }}
+                        className="flex flex-row h-48 drop-shadow w-full max-w-xs mb-10 pl-5 py-4 text-left rounded-xl text-white"
+                        >
+                        <div className="w-2/3">
+                            <p className=" BoldFonter">Invest in a Female Farmer</p>
+                            <small>Get up to 25% returns per anum</small>
+                        </div>
+                        <img alt="icon" src={img2} className="w-36 -mb-4" />
                     </div>
-                    <img alt="icon" src={img2} className="w-36 -mb-4" />
-                </div>
+                </Link>
 
-
-                <div className= "grid grid-rows-2 gap-4 p-6 h-48 max-w-sm rounded-lg border border-gray-200 shadow-md bg-[#F2F1F3]" style={{ backgroundImage: `url(${img3})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
-                        <div className="">
-                            <h2 className="text-[#5B2E4F] BoldFonter text-[16px] font-[700px] leading-5"> Invite your girls to  </h2> 
-                            <h2 className="text-[#5B2E4F] BoldFonter text-[16px] font-[700px] leading-5 pb-2">HerVest </h2> 
-                            <p className="text-xs pb-2 text-[10px] font-[400px] leading-"> Share your girl code</p>
-                            
-                        </div>
-                        <div className="mt-5 flex flex-row space-x-4">
-                            <div to="" className="inline-flex items-center text-[16px] font-[700px] leading-5 py-1 px-3 BoldFonter text-center text-white bg-[#5B2E4F] rounded-lg ">
-                                {referralCode}   
+                <Link to="/Referral">
+                    <div className= "grid grid-rows-2 gap-4 p-6 h-48 max-w-sm rounded-lg border border-gray-200 shadow-md bg-[#F2F1F3]" style={{ backgroundImage: `url(${img3})`, backgroundSize: "", backgroundRepeat: "no-repeat", backgroundPosition: "right",}}>
+                            <div className="">
+                                <h2 className="text-[#5B2E4F] BoldFonter text-[16px] font-[700px] leading-5"> Invite your girls to  </h2> 
+                                <h2 className="text-[#5B2E4F] BoldFonter text-[16px] font-[700px] leading-5 pb-2">HerVest </h2> 
+                                <p className="text-xs pb-2 text-[10px] font-[400px] leading-"> Share your girl code</p>
+                                
                             </div>
-                            <div>
-                                <button className="text-[#265859] inline-flex items-center text-[16px] font-[700px] leading-5 pt-3">
-                                    Share
-                                </button>
+                            <div className="mt-5 flex flex-row space-x-4">
+                                <div to="" className="inline-flex items-center text-[16px] font-[700px] leading-5 py-1 px-3 BoldFonter text-center text-white bg-[#5B2E4F] rounded-lg ">
+                                    {referralCode}   
+                                </div>
+                                <div>
+                                    <button className="text-[#265859] inline-flex items-center text-[16px] font-[700px] leading-5 pt-3">
+                                        Share
+                                    </button>
+                                </div>
+                        
                             </div>
-                    
-                        </div>
-                </div> 
+                    </div> 
+                </Link>
 
             </div>
         

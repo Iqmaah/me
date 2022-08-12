@@ -1,4 +1,4 @@
-//import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import Sidebar from "../../shared-components/Sidebar/Sidebar"
 import Button from "../../shared-components/Form/Button"
@@ -18,15 +18,19 @@ const PlanSummary = () => {
     // const targetDuration = localStorage.getItem('targetDuration')
 
     // const addPlanData = 
-
+    const [token, setToken] = useState("")
     const navigate = useNavigate()
 
+    useEffect(() => {
+        setToken(localStorage.getItem("token"))
+    })
 
     const addPlan = async () => {
         try {
-            const response =await POSTwithTOKEN('savings/addplan', addPlanData.state)
+            const response =await POSTwithTOKEN('savings/addplan', addPlanData.state, token)
             console.log(response)
             console.log(addPlanData);
+            
             navigate("/PlanPaymentMethod")
             
         } catch (error) {   

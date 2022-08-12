@@ -30,6 +30,8 @@ const Login = () => {
         try { 
             const response = await POSTwithoutTOKEN('account/login', loginData)
            localStorage.setItem('token', response.data.data.token)
+           localStorage.setItem('firstName', response.data.data.user.firstName)
+           localStorage.setItem('profile_image', response.data.data.user.profile_image)
             console.log('message', response.data)
             console.log(response.data.data);
             navigate('/Dashboard')

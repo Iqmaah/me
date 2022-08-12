@@ -4,6 +4,7 @@ import Sidebar from "../../shared-components/Sidebar/Sidebar"
 import piggybank from './../../assets/images/piggybank.png'
 import Plus from './../../assets/images/Plus.png'
 import { GETwithTOKEN } from '../../services/network/users'
+import toast from 'react-hot-toast'
 
 
 
@@ -30,24 +31,29 @@ const Plans = () => {
     //   ]
 
     const [plans, setPlans] = useState([])
+    const [totalSavings, setTotalSavings] = useState("")
+    const [token, setToken] = useState("")
+    //const totalSavings = localStorage.getItem("totalSavings")
+    console.log(totalSavings);
 
     useEffect(() => {
         myPlans()
         console.log('USE EFFECT');
-    
-    }, []);
+        setToken(localStorage.getItem("token"))
+    },);
 
       const  myPlans =async () => {
         try {
-            const response = await GETwithTOKEN('savings/listplan')
+            const response = await GETwithTOKEN('savings/listplan', token)
             const data_ = response.data.data
             console.log(response.data.data)
 
             setPlans(data_)
+            setTotalSavings(localStorage.getItem("totalSavings"))
             
         } catch (error) {
             console.log(error);
-            
+            toast(error.response.data.message)
         }
       }
 
@@ -62,7 +68,7 @@ const Plans = () => {
                 
                 <p className="text-[#B4B5C1] pb-4 text-[14px] font-[300px] leading-5">Savings balance</p>
 
-                <h2 className="BoldFonter text-[40px] font-[700px] " style={{lineHeight: "64.8px"}}>N420,548.00</h2>
+                <h2 className="BoldFonter text-[40px] font-[700px] " style={{lineHeight: "64.8px"}}>N{totalSavings}</h2>
 
                 {/* <div>
                     <a>My savings</a> <img src={arrows}></img>  <a>My Investments</a>

@@ -32,7 +32,7 @@ import HervestUser from "./pages/FundPurse/TransferFromPurse/HervestUser/Hervest
 import BankAccount from "./pages/FundPurse/TransferFromPurse/BankAccount/BankAccount";
 import SavingsPlan from "./pages/FundPurse/TransferFromPurse/SavingsPlan";
 import PursePaymentMethod from "./pages/FundPurse/PursePaymentMethod";
-import Referral1 from "./pages/Referral/Referral1";
+import Referral from "./pages/Referral/Referral";
 import Transactions from "./pages/Transactions/Transactions";
 import Cards from "./pages/Cards/Cards";
 import Banks from "./pages/Banks/Banks";
@@ -80,7 +80,7 @@ function App() {
             <Route  path="/BankAccount" element={<BankAccount />} />
             <Route  path="/HervestUser" element={<HervestUser />} />
             <Route  path="/SavingsPlan" element={<SavingsPlan />} />
-            <Route  path="/Referral1" element={<Referral1 />} />
+            <Route  path="/Referral" element={<Referral />} />
             <Route  path="/Transactions" element={<Transactions />} />
             <Route  path="/Cards" element={<Cards />} />
             <Route  path="/Banks" element={<Banks />} />

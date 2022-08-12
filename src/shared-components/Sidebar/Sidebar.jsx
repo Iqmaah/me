@@ -103,7 +103,7 @@ const Sidebar = () => {
 
                                 <li>
                                     <div className="pb-5 text-gray-600 hover:text-[#5B2E4F] hover:bg-[#FDF6F8] py-2 pl-2 rounded">
-                                    <Link to="/Refferal1"> <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                    <Link to="/Refferal"> <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                                             <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                                         </svg>
                                             <span className='ml-4'>Girl Code</span>
@@ -235,7 +235,7 @@ const Sidebar = () => {
 
                             <li>
                                 <div className="pb-5 text-gray-600 hover:text-[#5B2E4F] hover:bg-[#FDF6F8] py-2 pl-2 rounded">
-                                <Link to="/Referral1"> <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                <Link to="/Referral"> <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                                         <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                                     </svg>
                                         <span className='ml-4'>Girl Code</span>
