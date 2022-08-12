@@ -95,7 +95,7 @@ const PasswordReset3 = () => {
                         </div><br />
 
                         <div className=''>
-                            <Link to="/Login1">
+                            <Link to="/Login">
                                 <Button text="VERIFY" onClick={onChangePassword} />
                             </Link>
                         </div><br />

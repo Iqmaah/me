@@ -9,47 +9,47 @@ import { GETwithTOKEN } from '../../services/network/users'
 
 const Plans = () => {
 
-    const Plans = [
-        {
-            "id" : "001",
-            "name": "Saving for rainy days",
-            "amount": "N400,000"
-          },
+    // const Plans = [
+    //     {
+    //         "id" : "001",
+    //         "name": "Saving for rainy days",
+    //         "amount": "N400,000"
+    //       },
 
-          {
-            "id" : "003",
-            "name": "Saving for rainy days",
-            "amount": "N400,000"
-          },
+    //       {
+    //         "id" : "003",
+    //         "name": "Saving for rainy days",
+    //         "amount": "N400,000"
+    //       },
 
-          {
-            "id" : "002",
-            "name": "Saving for rainy days",
-            "amount": "N400,000"
-          }
-      ]
+    //       {
+    //         "id" : "002",
+    //         "name": "Saving for rainy days",
+    //         "amount": "N400,000"
+    //       }
+    //   ]
 
-    // const [plans, setPlans] = useState([])
+    const [plans, setPlans] = useState([])
 
-    // useEffect(() => {
-    //     myPlans()
-    //     console.log('USE EFFECT');
+    useEffect(() => {
+        myPlans()
+        console.log('USE EFFECT');
     
-    // }, []);
+    }, []);
 
-    //   const  myPlans =async () => {
-    //     try {
-    //         const response = await GETwithTOKEN('savings/listplan')
-    //         const data_ = await response.json()
-    //         console.log(response)
+      const  myPlans =async () => {
+        try {
+            const response = await GETwithTOKEN('savings/listplan')
+            const data_ = response.data.data
+            console.log(response.data.data)
 
-    //         setPlans(data_.data)
+            setPlans(data_)
             
-    //     } catch (error) {
-    //         console.log(error);
+        } catch (error) {
+            console.log(error);
             
-    //     }
-    //   }
+        }
+      }
 
     return(
         <div className="flex min-h-screen bg-slate-50 pb-20">
@@ -80,44 +80,65 @@ const Plans = () => {
 
 
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {
-                    Plans.map((Plan,i) => 
-
-                        <Link key={Plan.id} to="/SinglePlanPage" className= "grid grid-rows-2 gap-4 p-6 bg-white rounded-lg border border-gray-200 shadow-md ">
-                            <div  className="flex flex-row space-x-4">
-                                <div className="bg-[#F4CDE0] rounded-full items-center p-4">
-                                    <img src= {piggybank} alt="piggybank"/>
-                                </div> 
-                                <span><h2 className="pt-2 text-[16px] font-[400px] leading-8">{Plan.name}</h2></span>
-                            </div>
-
-                            <div>
-                                <h2 className="BoldFonter pb-2 text-[20px] font-[700px] leading-8">{Plan.amount}</h2>
-                                    
-                                    <div className="w-full bg-gray-300 h-1">
-                                        <div className="bg-[#5B2E4F] h-1" style={{width: "45%"}}></div>
+                    (plans.length === 0) ?
+                        <Link to="/CreatePlan">
+                            <div className= "grid grid-rows-2 gap-4 pt-5 pr-5 pl-5 w-80 bg-white rounded-lg border border-gray-200 shadow-md ">
+                                <div className="flex flex-row space-x-4 pb-4">
+                                    <div className="bg-[#F4CDE0] rounded-full items-center p-4 ">
+                                        <img src= {Plus} alt="Plus"/>
                                     </div>  
-                            </div>
+                                </div>
+                                <div className='mb-4'>
+                                    <h2 className="text-[#B4B5C1] BoldFonter text-[24px] font-[700px] leading-8">Create a new plan</h2>
+                                </div>
+                            </div> 
                         </Link>
-                        
+                    :
+                    (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {
+                                plans.map((plan,i) => 
+
+                                    <Link key={plan.id} to="/SinglePlanPage" className= "grid grid-rows-2 gap-4 p-6 bg-white rounded-lg border border-gray-200 shadow-md ">
+                                        <div  className="flex flex-row space-x-4">
+                                            <div className="bg-[#F4CDE0] rounded-full items-center p-4">
+                                                <img src= {piggybank} alt="piggybank"/>
+                                            </div> 
+                                            <span><h2 className="pt-2 text-[16px] font-[400px] leading-8">{plan.name}</h2></span>
+                                        </div>
+
+                                        <div>
+                                            <h2 className="BoldFonter pb-2 text-[20px] font-[700px] leading-8">{plan.target_amount}</h2>
+                                                
+                                                <div className="w-full bg-gray-300 h-1">
+                                                    <div className="bg-[#5B2E4F] h-1" style={{width: "45%"}}></div>
+                                                </div>  
+                                        </div>
+                                    </Link>
+                                    
+                                )
+                            } 
+                        </div>
                     )
-                } 
-                </div><br/>
+                        
+                }<br/>
+
+                
 
                 {/* <div className="grid grid-cols-1  lg:grid-cols-1 gap-4"> */}
-                    <Link to="/CreatePlan">
-                        <div className= "grid grid-rows-2 gap-4 pt-5 pr-5 pl-5 w-80 bg-white rounded-lg border border-gray-200 shadow-md ">
-                            <div className="flex flex-row space-x-4 pb-4">
-                                <div className="bg-[#F4CDE0] rounded-full items-center p-4 ">
-                                    <img src= {Plus} alt="Plus"/>
-                                </div>  
-                            </div>
-                            <div className='mb-4'>
-                                <h2 className="text-[#B4B5C1] BoldFonter text-[24px] font-[700px] leading-8">Create a new plan</h2>
-                            </div>
-                        </div> 
-                    </Link>  
+                        <Link to="/CreatePlan">
+                            <div className= "grid grid-rows-2 gap-4 pt-5 pr-5 pl-5 w-80 bg-white rounded-lg border border-gray-200 shadow-md ">
+                                <div className="flex flex-row space-x-4 pb-4">
+                                    <div className="bg-[#F4CDE0] rounded-full items-center p-4 ">
+                                        <img src= {Plus} alt="Plus"/>
+                                    </div>  
+                                </div>
+                                <div className='mb-4'>
+                                    <h2 className="text-[#B4B5C1] BoldFonter text-[24px] font-[700px] leading-8">Create a new plan</h2>
+                                </div>
+                            </div> 
+                        </Link> 
                 {/* </div> */}
                 
             </div>

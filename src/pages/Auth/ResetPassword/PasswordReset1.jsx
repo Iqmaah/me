@@ -73,7 +73,7 @@ const PasswordReset1 = () => {
                                 </div><br/>
 
                                 <div>
-                                    <Link to="/Login1">
+                                    <Link to="/Login">
                                         <button className='border border-[#5B2E4F] rounded text-[#5B2E4F] w-full px-10 py-2 text-[12px] font-[500px] leading-4'>
                                             REMEMBER PASSWORD? LOG IN
                                         </button>

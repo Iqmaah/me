@@ -101,7 +101,7 @@ const Signup1 = () => {
 
                 <div className="px-20 md:px-24 w-full space-y-4">
                     <div className='absolute right-5 top-3'>
-                        <p className='text-gray-800 text-[16px] font-[500px] leading-4'>Already own an account? <Link to="/Login1" className='text-[#5B2E4F] MediumFonter'>Log in</Link></p>
+                        <p className='text-gray-800 text-[16px] font-[500px] leading-4'>Already own an account? <Link to="/Login" className='text-[#5B2E4F] MediumFonter'>Log in</Link></p>
                     </div>
                     <div className=''>
 

@@ -7,7 +7,7 @@ import Signup1 from './pages/Auth/Signup/Signup1';
 import OtpVerification from "./pages/Auth/Signup/OtpVerification";
 import Welcome from "./pages/Auth/Signup/Welcome";
 import Signup4 from './pages/Auth/Signup/Signup4'
-import Login1 from './pages/Auth/Login/Login1'
+import Login from './pages/Auth/Login/Login'
 import Login2 from './pages/Auth/Login/Login2'
 import Loginmodal from './pages/Auth/Login/Loginmodal'
 import PasswordReset1 from './pages/Auth/ResetPassword/PasswordReset1'
@@ -57,7 +57,7 @@ function App() {
             <Route  path="/" element={<Signup1 />} />
             <Route  path="/OtpVerification" element={<OtpVerification />} />
             <Route  path="/Welcome" element={<Welcome />} />
-            <Route  path="/Login1" element={<Login1 />}/>
+            <Route  path="/Login" element={<Login />}/>
             <Route  path="/Loginmodal" element={<Loginmodal/>} />
             <Route  path="/PasswordReset1" element={<PasswordReset1 />} />
             <Route  path="/PasswordReset2" element={<PasswordReset2 />} />

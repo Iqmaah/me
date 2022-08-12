@@ -13,7 +13,7 @@ import toast from 'react-hot-toast'
 import { POSTwithoutTOKEN } from '../../../services/network/users'
 
 
-const Login1 = () => {
+const Login = () => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -137,4 +137,4 @@ const Login1 = () => {
 }
 
 
-export default Login1
+export default Login

@@ -8,7 +8,7 @@ import Signup1 from './pages/Auth/Signup/Signup1';
 import Signup2 from './pages/Auth/Signup/OtpVerification';
 import Signup3 from './pages/Auth/Signup/Signup3';
 import Signup4 from './pages/Auth/Signup/Signup4';
-import Login1 from './pages/Auth/Login/Login1';
+import Login from './pages/Auth/Login/Login';
 import Login2 from './pages/Auth/Login/Login2';
 import Loginmodal from './pages/Auth/Login/Loginmodal';
 import PasswordReset1 from './pages/Auth/ResetPassword/PasswordReset1';
