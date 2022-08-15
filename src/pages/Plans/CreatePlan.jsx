@@ -4,8 +4,10 @@ import Sidebar from "../../shared-components/Sidebar/Sidebar"
 import Dropdown from "../../shared-components/Form/Dropdown"
 import PrimaryFormField from "../../shared-components/Form/PrimaryFormField"
 import Button from "../../shared-components/Form/Button"
-import { addMonths } from "../../services/network/users"
+//import { addMonths } from "../../services/network/users"
 import { POSTwithoutTOKEN } from "../../services/network/users"
+import moment from "moment"
+
 //import toast from 'react-hot-toast'
 
 const CreatePlan = () => {
@@ -16,6 +18,7 @@ const CreatePlan = () => {
     const [targetDuration, setTargetDuration] = useState("")
     const [autoSave, setAutoSave] = useState(false)
     const [enableInterest, setEnableInterest] = useState(false)
+    const [startDate, setStartDate] = useState("")
     const [targetDate, setTargetDate] = useState()
     const [interestRate, setInterestRate] = useState()
     const navigate = useNavigate()
@@ -31,7 +34,8 @@ const CreatePlan = () => {
                 savingAmount,
                 targetDuration,
                 interestRate,
-                targetDate
+                targetDate,
+                startDate
             }})
         } catch (error) {
             console.log(error)
@@ -40,12 +44,15 @@ const CreatePlan = () => {
     }
 
     const handleDuration = async(dateValue) => {
-        console.log(dateValue);
+        console.log(dateValue, new Date());
+        console.log(startDate, 'selected date');
         setTargetDuration(dateValue)
-        let anewtarget =addMonths(new Date(), dateValue.replace("M",""))
+       // let anewtarget =addMonths(new Date(), dateValue.replace("M",""))
+       let anewtarget = moment(startDate, "YYYY-MM-DD").add(dateValue.replace("M",""), 'months')
         console.log(anewtarget);
         const response = await POSTwithoutTOKEN('misc/get_interest_rate', {
-            "startDate": (new Date().toISOString()).slice(0,10),
+            //"startDate": (new Date().toISOString()).slice(0,10),
+            "startDate": startDate,
             "targetDate": (anewtarget.toISOString()).slice(0,10)
         })
         console.log(response);
@@ -173,6 +180,11 @@ const CreatePlan = () => {
                                 <div>
                                     <label htmlFor="Saving target" className="sr-only">Saving target </label>
                                     <PrimaryFormField type="text" placeholder="Saving target"  onChange={(e) => setTargetAmount(e.target.value)} value={targetAmount}/>
+                                </div><br />
+
+                                <div>
+                                    <label htmlFor="Start Date" className="sr-only">Start Date </label>
+                                    <PrimaryFormField type="date" placeholder="Start Date"  onChange={(e) => setStartDate(e.target.value)} value={startDate}/>
                                 </div><br />
 
                                 <div className="flex justify-center">

@@ -9,7 +9,7 @@ import toast from 'react-hot-toast'
 const PlanSummary = () => {
     const addPlanData = useLocation();
     console.log(addPlanData.state);
-    const { planName,targetAmount,frequency,savingAmount,targetDuration,interestRate,targetDate } = addPlanData.state
+    const { planName,targetAmount,frequency,savingAmount,targetDuration,interestRate,targetDate,startDate } = addPlanData.state
 
     // const planName= localStorage.getItem('planName')
     // const targetAmount = localStorage.getItem('targetAmount')
@@ -107,7 +107,8 @@ const PlanSummary = () => {
 
                                 <div>
                                     <p className='text-[#666666] pb-2  text-[14px] font-[300px] leading-5'>Start date</p>
-                                    <p className='text-[16px] font-[400px] leading-6'>{(new Date().toISOString()).slice(0,10)}</p>
+                                    {/* <p className='text-[16px] font-[400px] leading-6'>{(new Date().toISOString()).slice(0,10)}</p> */}
+                                    <p className='text-[16px] font-[400px] leading-6'>{startDate}</p>
                                 </div>
                                 
                                 <div>

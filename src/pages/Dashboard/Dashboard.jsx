@@ -53,6 +53,7 @@ useEffect(() => {
         console.log(investments);
         setRefferalCode(response.data.data.referralCode)
         localStorage.setItem("totalSavings", response.data.data.totalSavings)
+        //localStorage.setItem()
         setFirstName(localStorage.getItem("firstName"))
         setProfile_image(localStorage.getItem("profile_image"))
 
